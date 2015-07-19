@@ -1,0 +1,375 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.edu.cmu.gourmetreaper.ui.MenuActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Appetizer"
+        android:id="@+id/appTitle"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/check1"
+        android:layout_below="@+id/appTitle"
+        android:layout_alignLeft="@+id/appTitle"
+        android:layout_alignStart="@+id/appTitle"
+        android:checked="false"
+        android:layout_marginTop="30dp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/img1"
+        android:layout_below="@+id/appTitle"
+        android:layout_toRightOf="@+id/check1"
+        android:layout_toEndOf="@+id/check1"
+        android:src="@drawable/menu"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food Description"
+        android:id="@+id/disText1"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_alignTop="@+id/check1"
+        android:layout_toRightOf="@+id/img1"
+        android:layout_toEndOf="@+id/img1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Price"
+        android:id="@+id/priceTitle1"
+        android:layout_alignTop="@+id/disText1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="52dp"
+        android:layout_marginEnd="52dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/check2"
+        android:checked="false"
+        android:layout_below="@+id/img1"
+        android:layout_alignLeft="@+id/check1"
+        android:layout_alignStart="@+id/check1"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/img2"
+        android:src="@drawable/menu"
+        android:layout_below="@+id/img1"
+        android:layout_toLeftOf="@+id/disText1"
+        android:layout_toStartOf="@+id/disText1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food Description"
+        android:id="@+id/disText2"
+        android:layout_alignTop="@+id/check2"
+        android:layout_alignLeft="@+id/disText1"
+        android:layout_alignStart="@+id/disText1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Price"
+        android:id="@+id/priceTitle2"
+        android:layout_alignTop="@+id/disText2"
+        android:layout_alignLeft="@+id/priceTitle1"
+        android:layout_alignStart="@+id/priceTitle1" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/check3"
+        android:checked="false"
+        android:layout_below="@+id/img2"
+        android:layout_alignLeft="@+id/check2"
+        android:layout_alignStart="@+id/check2"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/img3"
+        android:src="@drawable/menu"
+        android:layout_below="@+id/img2"
+        android:layout_toLeftOf="@+id/disText1"
+        android:layout_toStartOf="@+id/disText1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food Description"
+        android:id="@+id/disText3"
+        android:layout_alignTop="@+id/check3"
+        android:layout_alignLeft="@+id/disText2"
+        android:layout_alignStart="@+id/disText2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Price"
+        android:id="@+id/priceTitle3"
+        android:layout_alignTop="@+id/disText3"
+        android:layout_alignLeft="@+id/priceTitle2"
+        android:layout_alignStart="@+id/priceTitle2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Entrees"
+        android:id="@+id/entTitle"
+        android:layout_below="@+id/img3"
+        android:layout_alignLeft="@+id/check3"
+        android:layout_alignStart="@+id/check3"
+        android:layout_marginTop="20dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/check4"
+        android:checked="false"
+        android:layout_below="@+id/entTitle"
+        android:layout_alignLeft="@+id/entTitle"
+        android:layout_alignStart="@+id/entTitle"
+        android:layout_marginTop="30dp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/img4"
+        android:src="@drawable/menu"
+        android:layout_below="@+id/entTitle"
+        android:layout_alignLeft="@+id/img3"
+        android:layout_alignStart="@+id/img3"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food Description"
+        android:id="@+id/textView3"
+        android:layout_alignTop="@+id/check4"
+        android:layout_alignLeft="@+id/disText3"
+        android:layout_alignStart="@+id/disText3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Price"
+        android:id="@+id/textView4"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignLeft="@+id/priceTitle3"
+        android:layout_alignStart="@+id/priceTitle3" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/check5"
+        android:checked="false"
+        android:layout_below="@+id/img4"
+        android:layout_alignLeft="@+id/check4"
+        android:layout_alignStart="@+id/check4"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/img5"
+        android:src="@drawable/menu"
+        android:layout_below="@+id/img4"
+        android:layout_alignLeft="@+id/img4"
+        android:layout_alignStart="@+id/img4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food Description"
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/check5"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Price"
+        android:id="@+id/textView2"
+        android:layout_alignTop="@+id/textView"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/check6"
+        android:checked="false"
+        android:layout_below="@+id/img5"
+        android:layout_alignLeft="@+id/check5"
+        android:layout_alignStart="@+id/check5"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/img6"
+        android:src="@drawable/menu"
+        android:layout_below="@+id/img5"
+        android:layout_alignLeft="@+id/img5"
+        android:layout_alignStart="@+id/img5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food Description"
+        android:id="@+id/disText6"
+        android:layout_alignTop="@+id/check6"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Price"
+        android:id="@+id/priceText6"
+        android:layout_alignTop="@+id/disText6"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/check7"
+        android:checked="false"
+        android:layout_below="@+id/img6"
+        android:layout_alignLeft="@+id/check6"
+        android:layout_alignStart="@+id/check6"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/img7"
+        android:src="@drawable/menu"
+        android:layout_below="@+id/img6"
+        android:layout_alignLeft="@+id/img6"
+        android:layout_alignStart="@+id/img6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food Description"
+        android:id="@+id/disText7"
+        android:layout_alignTop="@+id/check7"
+        android:layout_alignLeft="@+id/disText6"
+        android:layout_alignStart="@+id/disText6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Price"
+        android:id="@+id/priceText7"
+        android:layout_alignTop="@+id/disText7"
+        android:layout_alignLeft="@+id/priceText6"
+        android:layout_alignStart="@+id/priceText6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Dessert"
+        android:id="@+id/dessertTitle"
+        android:layout_below="@+id/img7"
+        android:layout_alignLeft="@+id/check7"
+        android:layout_alignStart="@+id/check7"
+        android:layout_marginTop="20dp" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox"
+        android:checked="false"
+        android:layout_below="@+id/dessertTitle"
+        android:layout_alignLeft="@+id/dessertTitle"
+        android:layout_alignStart="@+id/dessertTitle"
+        android:layout_marginTop="30dp" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageView3"
+        android:src="@drawable/dessert"
+        android:layout_below="@+id/dessertTitle"
+        android:layout_alignLeft="@+id/img7"
+        android:layout_alignStart="@+id/img7"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Food Description"
+        android:id="@+id/textView6"
+        android:layout_alignTop="@+id/checkBox"
+        android:layout_alignLeft="@+id/disText7"
+        android:layout_alignStart="@+id/disText7" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Price"
+        android:id="@+id/textView7"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_alignLeft="@+id/priceText7"
+        android:layout_alignStart="@+id/priceText7" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Order"
+        android:id="@+id/addOrder"
+        android:background="#FFBF00"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignRight="@+id/textView7"
+        android:layout_alignEnd="@+id/textView7" />
+
+
+
+
+
+</RelativeLayout>
