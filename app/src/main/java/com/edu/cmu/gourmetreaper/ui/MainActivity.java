@@ -23,35 +23,35 @@ public class MainActivity extends TabActivity {
         TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
         tabHost.setup();
 
-        // Android tab
-        TabHost.TabSpec tabSpecAndroid = tabHost
+        // Home tab
+        TabHost.TabSpec tabHome = tabHost
                 .newTabSpec("Home")
                 .setIndicator("Home", resources.getDrawable(R.drawable.icon_home_config))
                 .setContent(new Intent().setClass(this, HomeActivity.class));
 
-        // Apple tab
-        TabHost.TabSpec tabSpecApple = tabHost
+        // Menu tab
+        TabHost.TabSpec tabMenu = tabHost
                 .newTabSpec("Menu")
                 .setIndicator("Menu", resources.getDrawable(R.drawable.icon_menu_config))
                 .setContent(new Intent().setClass(this, MenuActivity.class));
 
-        // Windows tab
-        TabHost.TabSpec tabSpecWindows = tabHost
+        // Order tab
+        TabHost.TabSpec tabOrder = tabHost
                 .newTabSpec("Order")
                 .setIndicator("Order", resources.getDrawable(R.drawable.icon_order_config))
                 .setContent(new Intent().setClass(this, OrderActivity.class));
 
-        // Blackberry tab
-        TabHost.TabSpec tabSpecBerry = tabHost
+        // User tab
+        TabHost.TabSpec tabUser = tabHost
                 .newTabSpec("User")
                 .setIndicator("User", resources.getDrawable(R.drawable.icon_user_config))
-                .setContent(new Intent().setClass(this, ProfileActivity.class));
+                .setContent(new Intent().setClass(this, ConnectFBActivity.class));
 
         // add all tabs
-        tabHost.addTab(tabSpecAndroid);
-        tabHost.addTab(tabSpecApple);
-        tabHost.addTab(tabSpecWindows);
-        tabHost.addTab(tabSpecBerry);
+        tabHost.addTab(tabHome);
+        tabHost.addTab(tabMenu);
+        tabHost.addTab(tabOrder);
+        tabHost.addTab(tabUser);
 
         //set Windows tab as default (zero based)
         tabHost.setCurrentTab(0);

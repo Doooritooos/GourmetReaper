@@ -2,10 +2,12 @@ package com.edu.cmu.gourmetreaper.ui;
 
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.edu.cmu.gourmetreaper.R;
 
@@ -16,6 +18,10 @@ public class ConnectFBActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect_fb);
+    }
+
+    public void loginFB(View view) {
+        startActivity(new Intent(this, ProfileActivity.class));
     }
 
     @Override

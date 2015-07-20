@@ -9,193 +9,207 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Chef Recommendation"
+        android:text="@string/recTitle"
         android:id="@+id/recTitle"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="15dp" />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/recImg1"
-        android:src="@drawable/dish"
+        android:background="@drawable/dish"
         android:layout_below="@+id/recTitle"
         android:layout_alignLeft="@+id/recTitle"
         android:layout_alignStart="@+id/recTitle"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY" />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/recImg2"
         android:layout_below="@+id/recTitle"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/dish"
-        android:layout_marginTop="10dp" />
+        android:background="@drawable/dish"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY" />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/recImg3"
         android:layout_alignTop="@+id/recImg2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="33dp"
         android:layout_marginEnd="33dp"
-        android:src="@drawable/dish" />
+        android:background="@drawable/dish"
+        android:scaleType="fitXY" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Most Popular"
+        android:text="@string/popTitle"
         android:id="@+id/popTitle"
         android:layout_below="@+id/recImg1"
         android:layout_alignLeft="@+id/recTitle"
         android:layout_alignStart="@+id/recTitle"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="40dp"
+        android:textSize="15dp" />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/popImg1"
         android:layout_below="@+id/popTitle"
         android:layout_alignLeft="@+id/popTitle"
         android:layout_alignStart="@+id/popTitle"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:src="@drawable/pop" />
+        android:background="@drawable/pop"
+        android:scaleType="fitXY" />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/popImg2"
         android:layout_alignTop="@+id/popImg1"
         android:layout_alignRight="@+id/recImg2"
         android:layout_alignEnd="@+id/recImg2"
-        android:src="@drawable/pop" />
+        android:src="@drawable/pop"
+        android:scaleType="fitXY" />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/popImg3"
         android:layout_alignTop="@+id/popImg2"
         android:layout_alignLeft="@+id/recImg3"
         android:layout_alignStart="@+id/recImg3"
-        android:src="@drawable/pop" />
+        android:src="@drawable/pop"
+        android:scaleType="fitXY" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="rec1"
+        android:text="@string/recText1"
         android:id="@+id/recText1"
         android:layout_alignRight="@+id/popTitle"
         android:layout_alignEnd="@+id/popTitle"
         android:layout_marginRight="34dp"
         android:layout_marginEnd="34dp"
-        android:layout_below="@+id/recImg1" />
+        android:layout_below="@+id/recImg1"
+        android:textSize="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="rec2"
+        android:text="@string/recText2"
         android:id="@+id/recText2"
         android:layout_alignTop="@+id/recText1"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="rec3"
+        android:text="@string/recText3"
         android:id="@+id/recText3"
+        android:textSize="10dp"
         android:layout_below="@+id/recImg3"
-        android:layout_alignRight="@+id/recImg3"
-        android:layout_alignEnd="@+id/recImg3"
-        android:layout_marginRight="53dp"
-        android:layout_marginEnd="53dp" />
+        android:layout_alignRight="@+id/popText3"
+        android:layout_alignEnd="@+id/popText3" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="pop1"
+        android:text="@string/popText1"
         android:id="@+id/popText1"
-        android:layout_alignLeft="@+id/popImg1"
-        android:layout_alignStart="@+id/popImg1"
+        android:textSize="10dp"
         android:layout_below="@+id/popImg1"
-        android:layout_marginLeft="50dp" />
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageView2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="pop2"
+        android:text="@string/popText2"
         android:id="@+id/popText2"
+        android:textSize="10dp"
         android:layout_below="@+id/popImg2"
-        android:layout_alignLeft="@+id/popImg2"
-        android:layout_alignStart="@+id/popImg2"
-        android:layout_marginLeft="50dp" />
+        android:layout_alignLeft="@+id/recText2"
+        android:layout_alignStart="@+id/recText2" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="pop3"
+        android:text="@string/popText3"
         android:id="@+id/popText3"
+        android:textSize="10dp"
         android:layout_below="@+id/popImg3"
-        android:layout_alignLeft="@+id/popImg3"
-        android:layout_alignStart="@+id/popImg3"
-        android:layout_marginLeft="55dp" />
+        android:layout_alignRight="@+id/popImg3"
+        android:layout_alignEnd="@+id/popImg3"
+        android:layout_marginRight="27dp"
+        android:layout_marginEnd="27dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="What they said"
+        android:text="@string/comTitle"
         android:id="@+id/comTitle"
         android:layout_below="@+id/popText1"
         android:layout_alignLeft="@+id/popTitle"
         android:layout_alignStart="@+id/popTitle"
-        android:layout_marginTop="40dp" />
+        android:layout_marginTop="20dp"
+        android:textSize="15dp" />
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/imageView"
         android:layout_below="@+id/comTitle"
         android:layout_alignLeft="@+id/popImg1"
         android:layout_alignStart="@+id/popImg1"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="25dp"
-        android:src="@drawable/user" />
+        android:layout_marginTop="10dp"
+        android:src="@drawable/user"
+        android:scaleType="fitXY" />
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:id="@+id/imageView2"
         android:layout_below="@+id/imageView"
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
         android:src="@drawable/heart"
-        android:layout_marginLeft="10dp" />
+        android:layout_marginLeft="10dp"
+        android:scaleType="fitXY" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="User&apos;s Comment about the restaurant"
+        android:text="@string/comText1"
         android:id="@+id/comText1"
         android:layout_alignTop="@+id/imageView"
         android:layout_toRightOf="@+id/popTitle"
         android:layout_toEndOf="@+id/popTitle"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:textSize="10dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -204,9 +218,10 @@
         android:layout_below="@+id/imageView2"
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="10dp"
         android:text="Leave your comment here..."
-        android:width="300dp" />
+        android:width="200dp"
+        android:textSize="15dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -214,9 +229,10 @@
         android:id="@+id/imageButton"
         android:src="@drawable/share"
         android:onClick="shareFB"
-        android:layout_alignBottom="@+id/comInput"
-        android:layout_toRightOf="@+id/comText1"
-        android:layout_toEndOf="@+id/comText1" />
+        android:scaleType="fitXY"
+        android:layout_below="@+id/comInput"
+        android:layout_toRightOf="@+id/popImg2"
+        android:layout_toEndOf="@+id/popImg2" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -224,12 +240,12 @@
         android:layout_height="30dp"
         android:text="Submit"
         android:id="@+id/submitButton"
-        android:onClick="submitComment"
         android:background="#FFBF00"
         android:width="70dp"
-        android:layout_alignTop="@+id/comInput"
-        android:layout_toRightOf="@+id/popImg2"
-        android:layout_toEndOf="@+id/popImg2"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/comInput"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>

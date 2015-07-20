@@ -7,23 +7,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Profile"
+        android:text="@string/profileTitle"
         android:id="@+id/profileTitle"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="20dp"
+        android:textSize="15dp" />
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/profileImg"
-        android:layout_below="@+id/profileTitle"
-        android:layout_alignLeft="@+id/profileTitle"
-        android:layout_alignStart="@+id/profileTitle"
         android:src="@drawable/profile"
+        android:layout_below="@+id/profileTitle"
+        android:layout_toRightOf="@+id/profileTitle"
+        android:layout_toEndOf="@+id/profileTitle"
         android:layout_marginTop="20dp" />
 
     <TextView
@@ -32,12 +33,10 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Name"
         android:id="@+id/nameText"
+        android:textSize="15dp"
         android:layout_alignTop="@+id/profileImg"
-        android:layout_toRightOf="@+id/profileImg"
-        android:layout_toEndOf="@+id/profileImg"
-        android:layout_marginLeft="82dp"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="41dp" />
+        android:layout_toRightOf="@+id/favText"
+        android:layout_toEndOf="@+id/favText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,75 +47,78 @@
         android:layout_below="@+id/nameText"
         android:layout_alignLeft="@+id/nameText"
         android:layout_alignStart="@+id/nameText"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:textSize="15dp" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/orderImg"
         android:src="@drawable/order"
-        android:layout_marginTop="47dp"
+        android:onClick="viewOrder"
         android:layout_below="@+id/profileImg"
-        android:layout_centerHorizontal="true"
-        android:onClick="viewOrder" />
+        android:layout_alignLeft="@+id/friendImg"
+        android:layout_alignStart="@+id/friendImg"
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="View Order"
+        android:text="@string/viewOrderTitle"
         android:id="@+id/orderText"
         android:layout_below="@+id/orderImg"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/favImg"
         android:src="@drawable/like"
-        android:layout_alignTop="@+id/couImg"
-        android:layout_toRightOf="@+id/profileTitle"
-        android:layout_toEndOf="@+id/profileTitle"
-        android:onClick="shareFav" />
+        android:onClick="shareFav"
+        android:layout_below="@+id/orderText"
+        android:layout_toLeftOf="@+id/friendText"
+        android:layout_toStartOf="@+id/friendText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Share Favorite"
+        android:text="@string/shareFavTitle"
         android:id="@+id/favText"
         android:layout_below="@+id/favImg"
         android:layout_alignLeft="@+id/favImg"
         android:layout_alignStart="@+id/favImg"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/couImg"
-        android:layout_marginLeft="36dp"
-        android:layout_marginStart="36dp"
         android:src="@drawable/coupon"
-        android:layout_below="@+id/orderText"
-        android:layout_toRightOf="@+id/statusText"
-        android:layout_toEndOf="@+id/statusText"
-        android:onClick="getCoupon" />
+        android:onClick="getCoupon"
+        android:layout_above="@+id/favText"
+        android:layout_toRightOf="@+id/friendText"
+        android:layout_toEndOf="@+id/friendText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Get Coupons"
+        android:text="@string/getCoupTitle"
         android:id="@+id/couText"
         android:layout_below="@+id/couImg"
         android:layout_alignLeft="@+id/couImg"
         android:layout_alignStart="@+id/couImg"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/friendImg"
         android:src="@drawable/friends"
         android:layout_below="@+id/favText"
@@ -127,11 +129,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Make Friends"
+        android:text="@string/makeFriTitle"
         android:id="@+id/friendText"
         android:layout_below="@+id/friendImg"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
 
 
 

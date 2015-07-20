@@ -7,24 +7,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Your order on (Date)"
+        android:text="@string/orderTitle"
         android:id="@+id/orderTitle"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginStart="34dp"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="10dp"
+        android:textSize="15dp" />
 
     <ImageView
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/imageView26"
         android:layout_below="@+id/orderTitle"
         android:layout_alignLeft="@+id/orderTitle"
         android:layout_alignStart="@+id/orderTitle"
         android:layout_marginTop="20dp"
-        android:src="@drawable/menu" />
+        android:src="@drawable/menu"
+        android:layout_marginLeft="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,7 +36,7 @@
         android:id="@+id/dishText1"
         android:layout_alignTop="@+id/imageView26"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,29 +46,32 @@
         android:id="@+id/desText1"
         android:layout_below="@+id/dishText1"
         android:layout_alignLeft="@+id/dishText1"
-        android:layout_alignStart="@+id/dishText1" />
+        android:layout_alignStart="@+id/dishText1"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Quantity:"
+        android:text="@string/quanTitle"
         android:id="@+id/quanTitle1"
         android:layout_below="@+id/desText1"
         android:layout_alignLeft="@+id/desText1"
         android:layout_alignStart="@+id/desText1"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="0dp"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Price:"
+        android:text="@string/priceTitle"
         android:id="@+id/priceTitle1"
         android:layout_below="@+id/quanTitle1"
         android:layout_alignLeft="@+id/quanTitle1"
         android:layout_alignStart="@+id/quanTitle1"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="0dp"
+        android:textSize="12dp" />
 
     <Spinner
         android:layout_width="120dp"
@@ -77,8 +82,8 @@
         android:layout_toEndOf="@+id/quanTitle1" />
 
     <ImageView
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/imageView27"
         android:layout_marginTop="45dp"
         android:src="@drawable/menu"
@@ -95,7 +100,8 @@
         android:layout_marginTop="20dp"
         android:layout_alignTop="@+id/imageView27"
         android:layout_alignLeft="@+id/priceTitle1"
-        android:layout_alignStart="@+id/priceTitle1" />
+        android:layout_alignStart="@+id/priceTitle1"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -105,7 +111,8 @@
         android:id="@+id/desText2"
         android:layout_below="@+id/dishText2"
         android:layout_alignLeft="@+id/dishText2"
-        android:layout_alignStart="@+id/dishText2" />
+        android:layout_alignStart="@+id/dishText2"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -116,30 +123,32 @@
         android:layout_below="@+id/desText2"
         android:layout_alignLeft="@+id/desText2"
         android:layout_alignStart="@+id/desText2"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="0dp"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Price:"
+        android:text="@string/priceTitle"
         android:id="@+id/priceTitle2"
         android:layout_below="@+id/quanTitle2"
         android:layout_alignLeft="@+id/quanTitle2"
         android:layout_alignStart="@+id/quanTitle2"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="0dp"
+        android:textSize="12dp" />
 
     <Spinner
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:id="@+id/spinner2"
         android:layout_below="@+id/desText2"
-        android:layout_alignLeft="@+id/spinner"
-        android:layout_alignStart="@+id/spinner" />
+        android:layout_toRightOf="@+id/quanTitle2"
+        android:layout_toEndOf="@+id/quanTitle2" />
 
     <ImageView
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/imageView28"
         android:layout_marginTop="45dp"
         android:layout_below="@+id/imageView27"
@@ -156,7 +165,8 @@
         android:layout_alignTop="@+id/imageView28"
         android:layout_alignLeft="@+id/priceTitle2"
         android:layout_alignStart="@+id/priceTitle2"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -166,7 +176,8 @@
         android:id="@+id/desText3"
         android:layout_below="@+id/dishText3"
         android:layout_alignLeft="@+id/dishText3"
-        android:layout_alignStart="@+id/dishText3" />
+        android:layout_alignStart="@+id/dishText3"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -177,18 +188,20 @@
         android:layout_below="@+id/desText3"
         android:layout_alignLeft="@+id/desText3"
         android:layout_alignStart="@+id/desText3"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="0dp"
+        android:textSize="12dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Price:"
+        android:text="@string/priceTitle"
         android:id="@+id/priceTitle3"
         android:layout_below="@+id/quanTitle3"
         android:layout_alignLeft="@+id/quanTitle3"
         android:layout_alignStart="@+id/quanTitle3"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="0dp"
+        android:textSize="12dp" />
 
     <Spinner
         android:layout_width="120dp"
@@ -202,23 +215,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Total price:"
+        android:text="@string/totalPriceTitle"
         android:id="@+id/totalPriceTitle"
-        android:layout_below="@+id/imageView28"
-        android:layout_toRightOf="@+id/imageView28"
-        android:layout_toEndOf="@+id/imageView28" />
+        android:textSize="15dp"
+        android:layout_alignTop="@+id/checkOrderButton"
+        android:layout_toLeftOf="@+id/priceTitle3"
+        android:layout_toStartOf="@+id/priceTitle3" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check"
-        android:id="@+id/checkOrder"
+        android:id="@+id/checkOrderButton"
         android:background="#FFBF00"
         android:textColor="#FFFFFF"
-        android:layout_alignBottom="@+id/totalPriceTitle"
-        android:layout_toRightOf="@+id/spinner3"
-        android:layout_toEndOf="@+id/spinner3"
-        android:onClick="checkOrder" />
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/spinner3"
+        android:layout_alignRight="@+id/spinner3"
+        android:layout_alignEnd="@+id/spinner3" />
 
 
 </RelativeLayout>

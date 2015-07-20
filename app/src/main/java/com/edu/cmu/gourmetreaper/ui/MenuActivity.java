@@ -2,10 +2,12 @@ package com.edu.cmu.gourmetreaper.ui;
 
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.edu.cmu.gourmetreaper.R;
 
@@ -16,6 +18,14 @@ public class MenuActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+    }
+
+    public void addToOrder(View view) {
+        startActivity(new Intent(this, OrderActivity.class));
+    }
+
+    public void goToDetail(View view) {
+        startActivity(new Intent(this, DetailActivity.class));
     }
 
     @Override

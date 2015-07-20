@@ -3,23 +3,10 @@
     android:layout_height="match_parent"
     tools:context="com.edu.cmu.gourmetreaper.ui.ConnectFBActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Connect with Facebook"
-        android:id="@+id/connTitle"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp" />
-
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/orderImg"
-        android:layout_below="@+id/connTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:src="@drawable/order" />
@@ -28,84 +15,85 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="View Order"
+        android:text="@string/viewOrderTitle"
         android:id="@+id/orderText"
         android:layout_below="@+id/orderImg"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/favImg"
         android:src="@drawable/like"
-        android:layout_below="@+id/orderText"
-        android:layout_alignRight="@+id/connTitle"
-        android:layout_alignEnd="@+id/connTitle"
-        android:layout_marginRight="45dp"
-        android:layout_marginEnd="45dp" />
+        android:layout_alignTop="@+id/couImg"
+        android:layout_toLeftOf="@+id/friendText"
+        android:layout_toStartOf="@+id/friendText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Share Favorite"
+        android:text="@string/shareFavTitle"
         android:id="@+id/favText"
         android:layout_below="@+id/favImg"
         android:layout_alignLeft="@+id/favImg"
         android:layout_alignStart="@+id/favImg"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/couImg"
-        android:layout_marginLeft="39dp"
-        android:layout_marginStart="39dp"
         android:src="@drawable/coupon"
         android:layout_below="@+id/orderText"
-        android:layout_toRightOf="@+id/orderImg"
-        android:layout_toEndOf="@+id/orderImg" />
+        android:layout_toRightOf="@+id/friendText"
+        android:layout_toEndOf="@+id/friendText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Get Coupons"
+        android:text="@string/getCoupTitle"
         android:id="@+id/couText"
         android:layout_below="@+id/couImg"
         android:layout_alignLeft="@+id/couImg"
         android:layout_alignStart="@+id/couImg"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/friendImg"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/friends" />
+        android:src="@drawable/friends"
+        android:layout_below="@+id/favText"
+        android:layout_alignLeft="@+id/orderImg"
+        android:layout_alignStart="@+id/orderImg" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Make Friends"
+        android:text="@string/makeFriTitle"
         android:id="@+id/friendText"
         android:layout_below="@+id/friendImg"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:textSize="12dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton4"
-        android:layout_below="@+id/friendText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
+        android:id="@+id/connFBButton4"
         android:src="@drawable/signin"
-        android:onClick="loginFB" />
-
+        android:onClick="loginFB"
+        android:longClickable="false"
+        android:layout_marginTop="120dp"
+        android:layout_below="@+id/friendText"
+        android:layout_centerHorizontal="true" />
 
 
 
