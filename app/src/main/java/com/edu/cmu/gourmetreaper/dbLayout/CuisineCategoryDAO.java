@@ -1,9 +1,13 @@
+/**
+ * This class is the interface of Cuisine Category Data Access Object
+ */
 package com.edu.cmu.gourmetreaper.dbLayout;
 
 /**
- * Created by songxiong on 7/19/15.
+ * @author Song Xiong
+ * Team: Gourmet Reapers
  */
-public class CuisineCategoryDAO {
+public interface CuisineCategoryDAO {
 
     //CRUD methods of CuisineCategory
 }
