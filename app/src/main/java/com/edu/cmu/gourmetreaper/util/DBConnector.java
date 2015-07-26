@@ -27,10 +27,10 @@ public class DBConnector {
             "CREATE TABLE " + LighteningOrderContract.CuisineTable.TABLE_NAME + " (" +
                     LighteningOrderContract.CuisineTable.COLUMN_NAME_CUISINE_ID +
                     " INTEGER primary key autoincrement," +
-                    LighteningOrderContract.CuisineTable.COLUMN_NAME_NAME + " TEXT not null," +
-                    LighteningOrderContract.CuisineTable.COLUMN_NAME_DESCRIPTION + " TEXT not null," +
-                    LighteningOrderContract.CuisineTable.COLUMN_NAME_PRICE + " DOUBLE not null," +
-                    LighteningOrderContract.CuisineTable.COLUMN_NAME_IMAGE + " BLOB not null" +
+                    LighteningOrderContract.CuisineTable.COLUMN_NAME_NAME + " TEXT not null, " +
+                    LighteningOrderContract.CuisineTable.COLUMN_NAME_DESCRIPTION + " TEXT not null, " +
+                    LighteningOrderContract.CuisineTable.COLUMN_NAME_PRICE + " DOUBLE not null, " +
+                    LighteningOrderContract.CuisineTable.COLUMN_NAME_IMAGE + " BLOB not null, " +
                     LighteningOrderContract.CuisineTable.COLUMN_NAME_CUISINE_CATEGORY_ID + " INTEGER, " +
                     " FOREIGN KEY (" + LighteningOrderContract.CuisineTable.COLUMN_NAME_CUISINE_CATEGORY_ID +
                     ") REFERENCES " + LighteningOrderContract.CuisineCategoryTable.TABLE_NAME +
@@ -41,9 +41,9 @@ public class DBConnector {
     private static final String SQL_CREATE_CUISINE_REVIEW =
             "CREATE TABLE " + LighteningOrderContract.CuisineReviewTable.TABLE_NAME + " (" +
                     LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_CUISINE_REVIEW_ID +
-                    " INTEGER primary key autoincrement," +
-                    LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_RATING + " INTEGER not null," +
-                    LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_COMMENT + " TEXT not null," +
+                    " INTEGER primary key autoincrement, " +
+                    LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_RATING + " INTEGER not null, " +
+                    LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_COMMENT + " TEXT not null, " +
                     LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_CUISINE_ID + " INTEGER, " +
                     " FOREIGN KEY (" + LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_CUISINE_ID +
                     ") REFERENCES " + LighteningOrderContract.CuisineTable.TABLE_NAME +
@@ -54,7 +54,7 @@ public class DBConnector {
             "CREATE TABLE " + LighteningOrderContract.CuisineImageTable.TABLE_NAME + " (" +
                     LighteningOrderContract.CuisineImageTable.COLUMN_NAME_CUISINE_IMAGE_ID +
                     " INTEGER primary key autoincrement," +
-                    LighteningOrderContract.CuisineImageTable.COLUMN_NAME_CUISINE_IMAGE_ID + " BLOB not null," +
+                    LighteningOrderContract.CuisineImageTable.COLUMN_NAME_IMAGE_DATA + " BLOB not null," +
                     LighteningOrderContract.CuisineImageTable.COLUMN_NAME_CUISINE_REVIEW_ID + " INTEGER," +
                     " FOREIGN KEY (" + LighteningOrderContract.CuisineImageTable.COLUMN_NAME_CUISINE_REVIEW_ID +
                     ") REFERENCES " + LighteningOrderContract.CuisineReviewTable.TABLE_NAME +
@@ -66,8 +66,7 @@ public class DBConnector {
                     LighteningOrderContract.RestaurantReviewTable.COLUMN_NAME_RESTAURANT_REVIEW_ID +
                     " INTEGER primary key autoincrement," +
                     LighteningOrderContract.RestaurantReviewTable.COLUMN_NAME_RATING + " INTEGER not null," +
-                    LighteningOrderContract.RestaurantReviewTable.COLUMN_NAME_COMMENT + " TEXT not null," +
-    ");";
+                    LighteningOrderContract.RestaurantReviewTable.COLUMN_NAME_COMMENT + " TEXT not null);";
 
     // database name
     private static final String DATABASE_NAME = "lightening_order";

@@ -84,17 +84,15 @@
         android:layout_marginTop="10dp"
         android:textSize="12dp" />
 
-    <ImageButton
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/connFBButton4"
-        android:src="@drawable/signin"
-        android:onClick="loginFB"
-        android:longClickable="false"
-        android:layout_marginTop="120dp"
+        android:text="Connect Facebook"
+        android:id="@+id/ConnFBButton"
         android:layout_below="@+id/friendText"
-        android:layout_centerHorizontal="true" />
-
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="138dp"
+        android:onClick="connFB" />
 
 
 </RelativeLayout>

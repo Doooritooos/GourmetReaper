@@ -79,10 +79,8 @@ public class RestaurantReviewDAOImpl implements RestaurantReviewDAO {
             String restaurantReviewComment = c.getString(c.getColumnIndex(
                     LighteningOrderContract.RestaurantReviewTable.COLUMN_NAME_COMMENT));
 
-            RestaurantReview review = new RestaurantReview();
+            RestaurantReview review = new RestaurantReview(restaurantReviewRating, restaurantReviewComment);
             review.setRestaurantReviewID(restaurantReviewID);
-            review.setRating(restaurantReviewRating);
-            review.setComment(restaurantReviewComment);
 
             reviews.add(review);
 
@@ -121,8 +119,8 @@ public class RestaurantReviewDAOImpl implements RestaurantReviewDAO {
                 null                                      // The sort order
         );
 
-        RestaurantReview review = new RestaurantReview();
 
+        if (c.getCount() == 0) return null;
         c.moveToFirst();
 
         // get the column index for each data item
@@ -133,9 +131,8 @@ public class RestaurantReviewDAOImpl implements RestaurantReviewDAO {
         String restaurantReviewComment = c.getString(c.getColumnIndex(
                 LighteningOrderContract.RestaurantReviewTable.COLUMN_NAME_COMMENT));
 
+        RestaurantReview review = new RestaurantReview(restaurantReviewRating, restaurantReviewComment);
         review.setRestaurantReviewID(restaurantReviewID);
-        review.setRating(restaurantReviewRating);
-        review.setComment(restaurantReviewComment);
 
         database.close();
         return review;
