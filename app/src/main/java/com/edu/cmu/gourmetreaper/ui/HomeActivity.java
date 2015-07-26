@@ -1,12 +1,8 @@
 package com.edu.cmu.gourmetreaper.ui;
 
 import android.app.Activity;
-import android.app.TabActivity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -38,7 +34,9 @@ public class HomeActivity extends Activity {
     }
 
     public void submitRestReview(View view) {
-        RestaurantReview rr = new RestaurantReview(5, comInput.getText().toString());
+        RestaurantReview rr = new RestaurantReview();
+        rr.setRating(5);
+        rr.setComment(comInput.getText().toString());
         rrd.insertRestaurantReview(rr);
         showReview();
     }

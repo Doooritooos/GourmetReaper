@@ -13,11 +13,6 @@ public class RestaurantReview {
     private int rating;
     private String comment;
 
-    public RestaurantReview(int rating, String comment) {
-        this.rating = rating;
-        this.comment = comment;
-    }
-
     // Getters and setters
 
     public int getRestaurantReviewID() {

@@ -79,8 +79,10 @@ public class RestaurantReviewDAOImpl implements RestaurantReviewDAO {
             String restaurantReviewComment = c.getString(c.getColumnIndex(
                     LighteningOrderContract.RestaurantReviewTable.COLUMN_NAME_COMMENT));
 
-            RestaurantReview review = new RestaurantReview(restaurantReviewRating, restaurantReviewComment);
+            RestaurantReview review = new RestaurantReview();
             review.setRestaurantReviewID(restaurantReviewID);
+            review.setRating(restaurantReviewRating);
+            review.setComment(restaurantReviewComment);
 
             reviews.add(review);
 
@@ -131,8 +133,10 @@ public class RestaurantReviewDAOImpl implements RestaurantReviewDAO {
         String restaurantReviewComment = c.getString(c.getColumnIndex(
                 LighteningOrderContract.RestaurantReviewTable.COLUMN_NAME_COMMENT));
 
-        RestaurantReview review = new RestaurantReview(restaurantReviewRating, restaurantReviewComment);
+        RestaurantReview review = new RestaurantReview();
         review.setRestaurantReviewID(restaurantReviewID);
+        review.setRating(restaurantReviewRating);
+        review.setComment(restaurantReviewComment);
 
         database.close();
         return review;
