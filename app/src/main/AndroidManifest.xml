@@ -2,11 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.edu.cmu.gourmetreaper" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name" >
@@ -39,6 +45,22 @@
         <activity
             android:name=".ui.HomeActivity"
             android:label="@string/title_activity_home" >
+        </activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.facebook.FacebookContentProvider"
+            android:authorities="com.facebook.app.FacebookContentProvider516610138514531"
+            android:exported="true" >
+        </provider>
+
+        <activity
+            android:name=".ui.TestFBActivity"
+            android:label="@string/title_activity_test_fb" >
         </activity>
     </application>
 

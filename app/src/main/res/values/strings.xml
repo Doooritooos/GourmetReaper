@@ -36,4 +36,8 @@
     <string name="getCoupTitle">Get Coupons</string>
     <string name="makeFriTitle">Make Friends</string>
     <string name="photoText">Check its photo</string>
+
+    <string name="app_id">516610138514531</string>
+    <string name="text_details">Login with Facebook</string>
+    <string name="title_activity_test_fb">TestFBActivity</string>
 </resources>
