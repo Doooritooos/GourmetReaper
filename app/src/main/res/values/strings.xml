@@ -36,9 +36,12 @@
     <string name="getCoupTitle">Get Coupons</string>
     <string name="makeFriTitle">Make Friends</string>
     <string name="photoText">Check its photo</string>
+    <string name="commentTitle">Leave your comment...</string>
 
     <string name="app_id">516610138514531</string>
-    <string name="text_details">Login with Facebook</string>
-    <string name="title_activity_test_fb">TestFBActivity</string>
-    <string name="commentTitle">Leave your comment here...</string>
+    <string name="text_details"></string>
+    <string name="post_button">post</string>
+    <string name="take_photo">take photo</string>
+    <string name="select_photo">select post photo</string>
+    <string name="input">Post content</string>
 </resources>
