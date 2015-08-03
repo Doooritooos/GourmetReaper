@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.telephony.IccOpenLogicalChannelResponse;
 
 import com.edu.cmu.gourmetreaper.dbLayout.CuisineDAO;
 import com.edu.cmu.gourmetreaper.entities.Cuisine;
@@ -16,6 +17,7 @@ import com.edu.cmu.gourmetreaper.util.DBConnector;
 import com.edu.cmu.gourmetreaper.util.LighteningOrderContract;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +43,7 @@ public class CuisineDAOImpl implements CuisineDAO {
         Bitmap photo = cuisine.getImage();
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         photo.compress(Bitmap.CompressFormat.PNG, 100, bos);
+        photo.recycle();
         byte[] bArray = bos.toByteArray();
 
         values.put(LighteningOrderContract.CuisineTable.COLUMN_NAME_IMAGE, bArray);
@@ -50,6 +53,13 @@ public class CuisineDAOImpl implements CuisineDAO {
         SQLiteDatabase database = connector.getDatabase();
         database.insert(LighteningOrderContract.CuisineTable.TABLE_NAME, null, values);
         connector.close();
+        try {
+            bos.close();
+            bos = null;
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
     }
 
     @Override
@@ -63,6 +73,7 @@ public class CuisineDAOImpl implements CuisineDAO {
         Bitmap photo = cuisine.getImage();
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         photo.compress(Bitmap.CompressFormat.PNG, 100, bos);
+        photo.recycle();
         byte[] bArray = bos.toByteArray();
 
         values.put(LighteningOrderContract.CuisineTable.COLUMN_NAME_IMAGE, bArray);
@@ -72,6 +83,12 @@ public class CuisineDAOImpl implements CuisineDAO {
         SQLiteDatabase database = connector.getDatabase();
         database.insert(LighteningOrderContract.CuisineTable.TABLE_NAME, null, values);
         connector.close();
+        try {
+            bos.close();
+            bos = null;
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
 
     @Override

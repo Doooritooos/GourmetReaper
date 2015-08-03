@@ -40,4 +40,5 @@
     <string name="app_id">516610138514531</string>
     <string name="text_details">Login with Facebook</string>
     <string name="title_activity_test_fb">TestFBActivity</string>
+    <string name="commentTitle">Leave your comment here...</string>
 </resources>
