@@ -69,7 +69,7 @@ public class DBConnector {
                     LighteningOrderContract.RestaurantReviewTable.COLUMN_NAME_COMMENT + " TEXT not null);";
 
     // database name
-    private static final String DATABASE_NAME = "lightening_order";
+    private static final String DATABASE_NAME = "app_lightening_order";
     private SQLiteDatabase database; // database object
     private DatabaseOpenHelper databaseOpenHelper; // database helper
 

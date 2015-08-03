@@ -14,21 +14,24 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#FFAB08" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:id="@+id/star1"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/disText"
-        android:layout_toRightOf="@+id/imageView9"
-        android:layout_toEndOf="@+id/imageView9" />
+        android:layout_alignTop="@+id/dishTitle"
+        android:layout_toRightOf="@+id/commentTitle"
+        android:layout_toEndOf="@+id/commentTitle"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView4"
+        android:id="@+id/star2"
         android:src="@drawable/star"
         android:layout_alignTop="@+id/star1"
         android:layout_toRightOf="@+id/star1"
@@ -37,29 +40,29 @@
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView5"
+        android:id="@+id/star3"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView4"
-        android:layout_toRightOf="@+id/imageView4"
-        android:layout_toEndOf="@+id/imageView4" />
+        android:layout_alignTop="@+id/star2"
+        android:layout_toRightOf="@+id/star2"
+        android:layout_toEndOf="@+id/star2" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView6"
+        android:id="@+id/star4"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView5"
-        android:layout_toRightOf="@+id/imageView5"
-        android:layout_toEndOf="@+id/imageView5" />
+        android:layout_alignTop="@+id/star3"
+        android:layout_toRightOf="@+id/star3"
+        android:layout_toEndOf="@+id/star3" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView7"
+        android:id="@+id/star5"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView6"
-        android:layout_toRightOf="@+id/imageView6"
-        android:layout_toEndOf="@+id/imageView6" />
+        android:layout_alignTop="@+id/star4"
+        android:layout_toRightOf="@+id/star4"
+        android:layout_toEndOf="@+id/star4" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,9 +71,9 @@
         android:text="(# reviews)"
         android:id="@+id/textView5"
         android:textSize="10dp"
-        android:layout_alignBottom="@+id/imageView7"
-        android:layout_toRightOf="@+id/imageView7"
-        android:layout_toEndOf="@+id/imageView7"
+        android:layout_alignBottom="@+id/star5"
+        android:layout_toRightOf="@+id/star5"
+        android:layout_toEndOf="@+id/star5"
         android:layout_marginLeft="31dp"
         android:layout_marginStart="31dp" />
 
@@ -90,7 +93,7 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="Add to order"
         android:id="@+id/addButton"
         android:layout_below="@+id/disText"
@@ -110,12 +113,13 @@
         android:layout_alignLeft="@+id/dishTitle"
         android:layout_alignStart="@+id/dishTitle"
         android:layout_marginTop="15dp"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#FFAB08" />
 
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:id="@+id/imageView8"
+        android:id="@+id/dishImg1"
         android:src="@drawable/menu"
         android:layout_below="@+id/photoText"
         android:layout_alignRight="@+id/comTitle"
@@ -124,21 +128,20 @@
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:id="@+id/imageView9"
+        android:id="@+id/dishImg2"
         android:src="@drawable/menu"
         android:layout_below="@+id/photoText"
-        android:layout_toRightOf="@+id/imageView15"
-        android:layout_toEndOf="@+id/imageView15" />
+        android:layout_toLeftOf="@+id/star4"
+        android:layout_toStartOf="@+id/star4" />
 
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:id="@+id/imageView10"
+        android:id="@+id/uploadImg"
         android:src="@drawable/camara"
-        android:layout_alignTop="@+id/imageView9"
-        android:layout_toRightOf="@+id/imageView9"
-        android:layout_toEndOf="@+id/imageView9"
-        android:layout_marginLeft="25dp" />
+        android:layout_below="@+id/commentTitle"
+        android:layout_alignLeft="@+id/commentTitle"
+        android:layout_alignStart="@+id/commentTitle" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -147,18 +150,19 @@
         android:text="@string/comTitle"
         android:id="@+id/comTitle"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/imageView8"
+        android:layout_below="@+id/dishImg1"
         android:layout_alignLeft="@+id/photoText"
         android:layout_alignStart="@+id/photoText"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#FFAB08" />
 
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/userImg1"
         android:layout_below="@+id/comTitle"
-        android:layout_alignLeft="@+id/imageView8"
-        android:layout_alignStart="@+id/imageView8"
+        android:layout_alignLeft="@+id/dishImg1"
+        android:layout_alignStart="@+id/dishImg1"
         android:layout_marginTop="5dp"
         android:src="@drawable/user" />
 
@@ -213,7 +217,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Comment"
-        android:id="@+id/comText1"
+        android:id="@+id/dishComText1"
         android:layout_below="@+id/imageView12"
         android:layout_alignLeft="@+id/imageView12"
         android:layout_alignStart="@+id/imageView12"
@@ -236,8 +240,8 @@
         android:id="@+id/imageView11"
         android:src="@drawable/star"
         android:layout_alignTop="@+id/userImg2"
-        android:layout_alignLeft="@+id/comText1"
-        android:layout_alignStart="@+id/comText1" />
+        android:layout_alignLeft="@+id/dishComText1"
+        android:layout_alignStart="@+id/dishComText1" />
 
     <ImageView
         android:layout_width="15dp"
@@ -271,7 +275,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Comment"
-        android:id="@+id/comText2"
+        android:id="@+id/dishComText2"
         android:layout_below="@+id/imageView11"
         android:layout_alignLeft="@+id/imageView11"
         android:layout_alignStart="@+id/imageView11"
@@ -281,23 +285,21 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/comText"
-        android:width="180dp"
-        android:text="Leave your comment here..."
+        android:id="@+id/dishComInput"
+        android:width="250dp"
         android:textSize="12dp"
-        android:layout_marginTop="46dp"
-        android:layout_below="@+id/comText2"
-        android:layout_alignLeft="@+id/userImg2"
-        android:layout_alignStart="@+id/userImg2" />
+        android:layout_below="@+id/uploadImg"
+        android:layout_alignLeft="@+id/uploadImg"
+        android:layout_alignStart="@+id/uploadImg" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:id="@+id/imageView21"
         android:src="@drawable/grey_star"
-        android:layout_above="@+id/imageButton2"
-        android:layout_toRightOf="@+id/imageView7"
-        android:layout_toEndOf="@+id/imageView7" />
+        android:layout_below="@+id/showImg"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5" />
 
     <ImageView
         android:layout_width="15dp"
@@ -338,12 +340,56 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
+        android:id="@+id/fbShareButton"
         android:src="@drawable/share"
-        android:layout_marginTop="22dp"
-        android:layout_alignTop="@+id/comText"
-        android:layout_alignLeft="@+id/imageView21"
-        android:layout_alignStart="@+id/imageView21" />
+        android:layout_below="@+id/dishComInput"
+        android:layout_toRightOf="@+id/imageView16"
+        android:layout_toEndOf="@+id/imageView16" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Submit"
+        android:id="@+id/submitDishCom"
+        android:background="#ffffbf00"
+        android:textColor="#ffffffff"
+        android:layout_below="@+id/dishComInput"
+        android:layout_alignRight="@+id/imageView11"
+        android:layout_alignEnd="@+id/imageView11"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/commentTitle"
+        android:id="@+id/commentTitle"
+        android:textSize="15dp"
+        android:textColor="#FFAB08"
+        android:layout_below="@+id/userImg2"
+        android:layout_alignLeft="@+id/comTitle"
+        android:layout_alignStart="@+id/comTitle"
+        android:layout_marginTop="11dp" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/dishImg3"
+        android:src="@drawable/menu"
+        android:layout_marginRight="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_alignTop="@+id/dishImg2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/showImg"
+        android:src="@drawable/menu"
+        android:layout_alignTop="@+id/uploadImg"
+        android:layout_toRightOf="@+id/commentTitle"
+        android:layout_toEndOf="@+id/commentTitle" />
 
 
 </RelativeLayout>

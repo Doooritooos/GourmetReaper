@@ -16,7 +16,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#FFAB08" />
 
     <ImageView
         android:layout_width="80dp"
@@ -28,17 +29,18 @@
         android:layout_alignStart="@+id/recTitle"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        android:src="@drawable/menu" />
 
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:id="@+id/recImg2"
-        android:layout_below="@+id/recTitle"
-        android:layout_centerHorizontal="true"
         android:background="@drawable/dish"
-        android:layout_marginTop="10dp"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        android:layout_alignTop="@+id/recImg1"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/menu" />
 
     <ImageView
         android:layout_width="80dp"
@@ -50,7 +52,8 @@
         android:layout_marginRight="33dp"
         android:layout_marginEnd="33dp"
         android:background="@drawable/dish"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        android:src="@drawable/menu" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,7 +65,8 @@
         android:layout_alignLeft="@+id/recTitle"
         android:layout_alignStart="@+id/recTitle"
         android:layout_marginTop="40dp"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#FFAB08" />
 
     <ImageView
         android:layout_width="80dp"
@@ -74,7 +78,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/pop"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        android:src="@drawable/menu" />
 
     <ImageView
         android:layout_width="80dp"
@@ -83,7 +88,7 @@
         android:layout_alignTop="@+id/popImg1"
         android:layout_alignRight="@+id/recImg2"
         android:layout_alignEnd="@+id/recImg2"
-        android:src="@drawable/pop"
+        android:src="@drawable/menu"
         android:scaleType="fitXY" />
 
     <ImageView
@@ -93,7 +98,7 @@
         android:layout_alignTop="@+id/popImg2"
         android:layout_alignLeft="@+id/recImg3"
         android:layout_alignStart="@+id/recImg3"
-        android:src="@drawable/pop"
+        android:src="@drawable/menu"
         android:scaleType="fitXY" />
 
     <TextView
@@ -102,12 +107,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/recText1"
         android:id="@+id/recText1"
-        android:layout_alignRight="@+id/popTitle"
-        android:layout_alignEnd="@+id/popTitle"
-        android:layout_marginRight="34dp"
-        android:layout_marginEnd="34dp"
+        android:textSize="10dp"
         android:layout_below="@+id/recImg1"
-        android:textSize="10dp" />
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -127,8 +130,8 @@
         android:id="@+id/recText3"
         android:textSize="10dp"
         android:layout_below="@+id/recImg3"
-        android:layout_alignRight="@+id/popText3"
-        android:layout_alignEnd="@+id/popText3" />
+        android:layout_alignLeft="@+id/popText3"
+        android:layout_alignStart="@+id/popText3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -138,8 +141,8 @@
         android:id="@+id/popText1"
         android:textSize="10dp"
         android:layout_below="@+id/popImg1"
-        android:layout_toRightOf="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2" />
+        android:layout_alignLeft="@+id/recText1"
+        android:layout_alignStart="@+id/recText1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -159,11 +162,11 @@
         android:text="@string/popText3"
         android:id="@+id/popText3"
         android:textSize="10dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp"
         android:layout_below="@+id/popImg3"
         android:layout_alignRight="@+id/popImg3"
-        android:layout_alignEnd="@+id/popImg3"
-        android:layout_marginRight="27dp"
-        android:layout_marginEnd="27dp" />
+        android:layout_alignEnd="@+id/popImg3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -175,7 +178,8 @@
         android:layout_alignLeft="@+id/popTitle"
         android:layout_alignStart="@+id/popTitle"
         android:layout_marginTop="20dp"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#FFAB08" />
 
     <ImageView
         android:layout_width="40dp"
@@ -204,7 +208,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/comText1"
-        android:id="@+id/comText1"
+        android:id="@+id/dishComText1"
         android:layout_alignTop="@+id/imageView"
         android:layout_toRightOf="@+id/popTitle"
         android:layout_toEndOf="@+id/popTitle"
@@ -219,8 +223,7 @@
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
         android:layout_marginTop="10dp"
-        android:text="Leave your comment here..."
-        android:width="200dp"
+        android:width="280dp"
         android:textSize="15dp" />
 
     <ImageButton

@@ -14,7 +14,8 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#FFAB08" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -41,12 +42,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Food Description"
         android:id="@+id/desText1"
-        android:layout_marginLeft="42dp"
-        android:layout_marginStart="42dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:textSize="10dp"
         android:layout_alignTop="@+id/check1"
         android:layout_toRightOf="@+id/img1"
         android:layout_toEndOf="@+id/img1"
-        android:textSize="10dp" />
+        android:width="300dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,12 +56,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/priceTitle"
         android:id="@+id/priceTitle1"
-        android:layout_alignTop="@+id/desText1"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp"
+        android:textSize="10dp"
+        android:layout_alignBaseline="@+id/desText1"
+        android:layout_alignBottom="@+id/desText1"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="52dp"
-        android:layout_marginEnd="52dp"
-        android:textSize="10dp" />
+        android:layout_alignParentEnd="true" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -88,7 +91,8 @@
         android:layout_alignTop="@+id/check2"
         android:layout_alignLeft="@+id/desText1"
         android:layout_alignStart="@+id/desText1"
-        android:textSize="10dp" />
+        android:textSize="10dp"
+        android:width="300dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -128,7 +132,8 @@
         android:layout_alignTop="@+id/check3"
         android:layout_alignLeft="@+id/desText2"
         android:layout_alignStart="@+id/desText2"
-        android:textSize="10dp" />
+        android:textSize="10dp"
+        android:width="300dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -151,7 +156,8 @@
         android:layout_alignLeft="@+id/check3"
         android:layout_alignStart="@+id/check3"
         android:layout_marginTop="15dp"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:textColor="#FFAB08" />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -180,14 +186,15 @@
         android:layout_alignTop="@+id/check4"
         android:layout_alignLeft="@+id/desText3"
         android:layout_alignStart="@+id/desText3"
-        android:textSize="10dp" />
+        android:textSize="10dp"
+        android:width="300dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/priceTitle"
-        android:id="@+id/textView4"
+        android:id="@+id/priceTitle4"
         android:layout_alignTop="@+id/desText4"
         android:layout_alignLeft="@+id/priceTitle3"
         android:layout_alignStart="@+id/priceTitle3"
@@ -219,20 +226,20 @@
         android:text="Food Description"
         android:id="@+id/desText5"
         android:textSize="10dp"
-        android:layout_alignBaseline="@+id/check5"
-        android:layout_alignBottom="@+id/check5"
+        android:layout_alignTop="@+id/check5"
         android:layout_alignLeft="@+id/desText4"
-        android:layout_alignStart="@+id/desText4" />
+        android:layout_alignStart="@+id/desText4"
+        android:width="300dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/priceTitle"
-        android:id="@+id/textView2"
+        android:id="@+id/priceTitle5"
         android:layout_alignTop="@+id/desText5"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
+        android:layout_alignLeft="@+id/priceTitle4"
+        android:layout_alignStart="@+id/priceTitle4"
         android:textSize="10dp" />
 
     <CheckBox
@@ -261,20 +268,20 @@
         android:text="Food Description"
         android:id="@+id/desText6"
         android:textSize="10dp"
-        android:layout_alignBaseline="@+id/check6"
-        android:layout_alignBottom="@+id/check6"
+        android:layout_alignTop="@+id/check6"
         android:layout_alignLeft="@+id/desText5"
-        android:layout_alignStart="@+id/desText5" />
+        android:layout_alignStart="@+id/desText5"
+        android:width="300dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/priceTitle"
-        android:id="@+id/priceText6"
+        android:id="@+id/priceTitle6"
         android:layout_alignTop="@+id/desText6"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
+        android:layout_alignLeft="@+id/priceTitle5"
+        android:layout_alignStart="@+id/priceTitle5"
         android:textSize="10dp" />
 
     <TextView
@@ -287,26 +294,27 @@
         android:textSize="15dp"
         android:layout_alignLeft="@+id/check6"
         android:layout_alignStart="@+id/check6"
-        android:layout_below="@+id/img6" />
+        android:layout_below="@+id/img6"
+        android:textColor="#FFAB08" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBox"
+        android:id="@+id/check7"
         android:checked="false"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/dessertTitle"
+        android:layout_alignBottom="@+id/img7"
         android:layout_alignLeft="@+id/dessertTitle"
-        android:layout_alignStart="@+id/dessertTitle" />
+        android:layout_alignStart="@+id/dessertTitle"
+        android:layout_marginBottom="11dp" />
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="70dp"
-        android:id="@+id/imageView3"
+        android:id="@+id/img7"
         android:src="@drawable/dessert"
         android:layout_below="@+id/dessertTitle"
-        android:layout_toRightOf="@+id/checkBox"
-        android:layout_toEndOf="@+id/checkBox" />
+        android:layout_toRightOf="@+id/check7"
+        android:layout_toEndOf="@+id/check7" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -314,32 +322,33 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Food Description"
         android:id="@+id/desText7"
-        android:layout_alignTop="@+id/checkBox"
+        android:textSize="10dp"
+        android:layout_alignTop="@+id/check7"
         android:layout_alignLeft="@+id/desText6"
         android:layout_alignStart="@+id/desText6"
-        android:textSize="10dp" />
+        android:width="300dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/priceTitle"
-        android:id="@+id/textView7"
+        android:id="@+id/priceTitle7"
         android:layout_alignTop="@+id/desText7"
-        android:layout_alignLeft="@+id/priceText6"
-        android:layout_alignStart="@+id/priceText6"
+        android:layout_alignLeft="@+id/priceTitle6"
+        android:layout_alignStart="@+id/priceTitle6"
         android:textSize="10dp" />
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="Add Order"
         android:id="@+id/addOrder"
         android:background="#FFBF00"
         android:textColor="#FFFFFF"
-        android:layout_below="@+id/checkBox"
-        android:layout_alignRight="@+id/textView7"
-        android:layout_alignEnd="@+id/textView7"
+        android:layout_below="@+id/check7"
+        android:layout_alignRight="@+id/priceTitle7"
+        android:layout_alignEnd="@+id/priceTitle7"
         android:onClick="addToOrder" />
 
 
