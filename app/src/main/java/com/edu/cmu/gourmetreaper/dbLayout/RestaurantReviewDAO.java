@@ -15,7 +15,7 @@ public interface RestaurantReviewDAO {
 
     /**
      * Insert a new restaurant review into the database
-     * @param restaurantReview new restaurant review into the database
+     * @param restaurantReview new restaurant review adding into the database
      */
     public void insertRestaurantReview(RestaurantReview restaurantReview);
 
@@ -27,8 +27,8 @@ public interface RestaurantReviewDAO {
 
     /**
      * Get a restaurant review by a given ID
-     * @param id id of the restaurant
-     * @return a restaurant review by a given ID
+     * @param id id of the restaurant review
+     * @return a restaurant review of a given ID
      */
     public RestaurantReview getRestaurantReviewByID(int id);
 
@@ -36,7 +36,7 @@ public interface RestaurantReviewDAO {
      * Update a restaurant review by a given id
      * @param id id of the restaurant review to update
      * @param restaurantReview the restaurant review to update, unchanged field should be filled in
-     *                         original value
+     *                         with original value
      */
     public void updateRestaurantReviewByID(int id, RestaurantReview restaurantReview);
 
