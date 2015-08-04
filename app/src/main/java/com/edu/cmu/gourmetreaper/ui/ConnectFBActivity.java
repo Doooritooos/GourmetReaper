@@ -21,7 +21,7 @@ public class ConnectFBActivity extends Activity {
     }
 
     public void connFB(View view) {
-        startActivity(new Intent(this, TestFBActivity.class));
+        startActivity(new Intent(this, ProfileActivity.class));
     }
 
     @Override

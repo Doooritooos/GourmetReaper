@@ -6,81 +6,159 @@ android:paddingLeft="@dimen/activity_horizontal_margin"
 android:paddingRight="@dimen/activity_horizontal_margin"
 android:paddingTop="@dimen/activity_vertical_margin"
 android:paddingBottom="@dimen/activity_vertical_margin"
-tools:context=".com.edu.cmu.gourmetreaper.ui.FBFragment">
+    tools:context=".com.edu.cmu.gourmetreaper.ui.FBFragment"
+    android:id="@+id/fragment">
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="162dp"
-        android:layout_below="@+id/input"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/from_gallery"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:text="@string/text_details"
         android:gravity="center"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
 
     <com.facebook.login.widget.ProfilePictureView
         android:id="@+id/profilePicture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:gravity="center"
-        android:visibility="invisible"
-        android:layout_below="@+id/select_button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"></com.facebook.login.widget.ProfilePictureView>
-
-
-    <TextView
-        android:text="@string/input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:id="@+id/inputLabel" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:id="@+id/input"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/select_photo"
-        android:id="@+id/select_button"
-
-
-        android:layout_alignTop="@+id/from_gallery"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:visibility="invisible"></com.facebook.login.widget.ProfilePictureView>
 
     <ImageView
-        android:layout_width="240dp"
-        android:layout_height="120dp"
-        android:id="@+id/from_gallery"
-        android:gravity="left"
-        android:layout_alignBottom="@+id/login_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/orderImg"
+        android:src="@drawable/order"
+        android:layout_below="@+id/profilePicture"
+        android:layout_alignRight="@+id/orderText"
+        android:layout_alignEnd="@+id/orderText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/viewOrderTitle"
+        android:id="@+id/orderText"
+        android:textSize="10dp"
+        android:layout_below="@+id/orderImg"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/favImg"
+        android:src="@drawable/like"
+        android:layout_below="@+id/orderText"
+        android:layout_toLeftOf="@+id/orderText"
+        android:layout_toStartOf="@+id/orderText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/shareFavTitle"
+        android:id="@+id/favText"
+        android:textSize="10dp"
+        android:layout_below="@+id/favImg"
+        android:layout_toLeftOf="@+id/orderText" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/coupImg"
+        android:src="@drawable/coupon"
+        android:layout_alignTop="@+id/favImg"
+        android:layout_toRightOf="@+id/orderText"
+        android:layout_toEndOf="@+id/orderText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/getCoupTitle"
+        android:id="@+id/coupText"
+        android:textSize="10dp"
+        android:layout_below="@+id/coupImg"
+        android:layout_toRightOf="@+id/orderText" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/friendImg"
+        android:src="@drawable/friends"
+        android:layout_below="@+id/favText"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/makeFriTitle"
+        android:id="@+id/friendText"
+        android:textSize="10dp"
+        android:layout_below="@+id/friendImg"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Share your favorite"
+        android:id="@+id/inputLabel"
+        android:textSize="15dp"
+        android:textColor="#FFAB08"
+        android:layout_below="@+id/friendText"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/post_button"
-        android:id="@+id/post_button"
-
-        android:layout_below="@+id/from_gallery"
+        android:id="@+id/input"
+        android:layout_below="@+id/inputLabel"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="48dp" />
+        android:width="500dp" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/select_button"
+        android:src="@drawable/camara"
+        android:layout_below="@+id/input"
+        android:layout_alignRight="@+id/profilePicture"
+        android:layout_alignEnd="@+id/profilePicture" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/from_gallery"
+        android:src="@drawable/pop"
+        android:layout_below="@+id/input"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="Post"
+        android:id="@+id/post_button"
+        android:textColor="#FFFFFF"
+        android:background="#FFBF00"
+        android:layout_below="@+id/input"
+        android:layout_alignRight="@+id/input"
+        android:layout_alignEnd="@+id/input"
+        android:layout_marginTop="18dp" />
+
+
 </RelativeLayout>

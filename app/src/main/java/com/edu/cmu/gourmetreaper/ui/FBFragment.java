@@ -38,14 +38,12 @@ import com.facebook.login.widget.ProfilePictureView;
 import com.facebook.share.ShareApi;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
-
 import android.database.Cursor;
 import android.provider.MediaStore.MediaColumns;
 import android.widget.Toast;
@@ -61,7 +59,7 @@ public class FBFragment extends Fragment {
     private AccessTokenTracker mTokenTracker;
     private ProfileTracker mProfileTracker;
     private Button postButton;
-    private Button selectButton;
+    private ImageView selectButton;
     private ImageView fromGallery;
     private LoginButton loginButton;
     private ProfilePictureView profilePictureView;
@@ -70,8 +68,8 @@ public class FBFragment extends Fragment {
     private FacebookCallback<LoginResult > mCallback = new FacebookCallback<LoginResult>() {
         @Override
         public void onSuccess(LoginResult loginResult) {
-            AccessToken accessToken=loginResult.getAccessToken();
-            Profile profile=Profile.getCurrentProfile();
+            AccessToken accessToken = loginResult.getAccessToken();
+            Profile profile = Profile.getCurrentProfile();
 
             displayWelcomeMessage(profile);
 
@@ -98,6 +96,7 @@ public class FBFragment extends Fragment {
 
         }
     };
+
     public FBFragment() {
     }
     @Override
@@ -106,7 +105,7 @@ public class FBFragment extends Fragment {
         FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
 
         callbackManager=CallbackManager.Factory.create();
-        mTokenTracker=new AccessTokenTracker() {
+        mTokenTracker = new AccessTokenTracker() {
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken old, AccessToken newToken) {
 
@@ -162,7 +161,7 @@ public class FBFragment extends Fragment {
 
         fromGallery = (ImageView) view.findViewById(R.id.from_gallery);
 
-        selectButton = (Button) view.findViewById(R.id.select_button);
+        selectButton = (ImageView) view.findViewById(R.id.select_button);
         selectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -182,7 +181,7 @@ public class FBFragment extends Fragment {
 
     private void displayWelcomeMessage(Profile profile){
         if(profile!=null){
-            mTextDetails.setText("Welcome " + profile.getName());
+            mTextDetails.setText("Hello,  " + profile.getName());
             try {
                 profilePictureView.setProfileId(profile.getId());
             } catch (Exception e) {
@@ -192,9 +191,7 @@ public class FBFragment extends Fragment {
             postButton.setVisibility(View.VISIBLE);
             profilePictureView.setVisibility(View.VISIBLE);
             mTextDetails.setVisibility(View.VISIBLE);
-
         }
-
     }
 
     private void sharePhotoToFacebook() {
@@ -237,7 +234,6 @@ public class FBFragment extends Fragment {
                 onCaptureImageResult(data);
         }
     }
-
     private void onCaptureImageResult(Intent data) {
         Bitmap bm = (Bitmap) data.getExtras().get("data");
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
@@ -302,7 +298,6 @@ public class FBFragment extends Fragment {
         getActivity().stopService(new Intent(getActivity(), FacebookService.class));
 
     }
-
     private void selectImage() {
         final CharSequence[] items = {"Take Photo with Camera", "Choose from Gallery", "Cancel"};
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -316,7 +311,7 @@ public class FBFragment extends Fragment {
                 } else if (items[item].equals("Choose from Gallery")) {
                     Intent intent = new Intent(
                             Intent.ACTION_PICK,
-                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                            MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     intent.setType("image/*");
                     startActivityForResult(
                             Intent.createChooser(intent, "Select File"),
