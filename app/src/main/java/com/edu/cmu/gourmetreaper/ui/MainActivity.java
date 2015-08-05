@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.TabHost;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.edu.cmu.gourmetreaper.R;
 import com.edu.cmu.gourmetreaper.dbLayout.CuisineCategoryDAO;
@@ -34,10 +36,10 @@ public class MainActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //initTable();
+        initTable();
 
         Resources resources = getResources();
-        TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
+        final TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
         tabHost.setup();
 
         // Home tab
@@ -70,10 +72,37 @@ public class MainActivity extends TabActivity {
         tabHost.addTab(tabOrder);
         tabHost.addTab(tabUser);
 
+//        // set color
+//        for(int i=0;i<tabHost.getTabWidget().getChildCount();i++)
+//        {
+//            TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
+//            tv.setTextColor(Color.parseColor("#000000"));
+//        }
+
+        tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+
+            @Override
+            public void onTabChanged(String tabId) {
+
+                for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
+                    tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#EAEAEA")); // unselected
+                    TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+                    tv.setTextColor(Color.parseColor("#FFBF00"));
+                }
+
+                tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFBF00")); // selected
+                TextView tv = (TextView) tabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
+                tv.setTextColor(Color.parseColor("#FFFFFF"));
+
+            }
+        });
+
+
         //set Windows tab as default (zero based)
         tabHost.setCurrentTab(0);
-
-
+        tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFBF00")); // selected
+        TextView tv = (TextView) tabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
+        tv.setTextColor(Color.parseColor("#FFFFFF"));
         // play music
         song1 = MediaPlayer.create(this, R.raw.lost_stars);
         switchSong1();
