@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="(# reviews)"
-        android:id="@+id/textView5"
+        android:id="@+id/reviewNum"
         android:textSize="10dp"
         android:layout_alignBottom="@+id/star5"
         android:layout_toRightOf="@+id/star5"
@@ -130,9 +130,9 @@
         android:layout_height="80dp"
         android:id="@+id/dishImg2"
         android:src="@drawable/menu"
-        android:layout_below="@+id/photoText"
-        android:layout_toLeftOf="@+id/star4"
-        android:layout_toStartOf="@+id/star4" />
+        android:layout_alignTop="@+id/dishImg1"
+        android:layout_toRightOf="@+id/commentTitle"
+        android:layout_toEndOf="@+id/commentTitle" />
 
     <ImageView
         android:layout_width="80dp"
@@ -298,8 +298,8 @@
         android:id="@+id/imageView21"
         android:src="@drawable/grey_star"
         android:layout_below="@+id/showImg"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_alignStart="@+id/textView5" />
+        android:layout_alignLeft="@+id/reviewNum"
+        android:layout_alignStart="@+id/reviewNum" />
 
     <ImageView
         android:layout_width="15dp"
@@ -344,7 +344,8 @@
         android:src="@drawable/share"
         android:layout_below="@+id/dishComInput"
         android:layout_toRightOf="@+id/imageView16"
-        android:layout_toEndOf="@+id/imageView16" />
+        android:layout_toEndOf="@+id/imageView16"
+        android:onClick="sharePhotoToFacebook" />
 
     <Button
         android:layout_width="wrap_content"
@@ -356,7 +357,8 @@
         android:layout_below="@+id/dishComInput"
         android:layout_alignRight="@+id/imageView11"
         android:layout_alignEnd="@+id/imageView11"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:onClick="submitReview" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -3,10 +3,11 @@
     package="com.edu.cmu.gourmetreaper" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_lightning_order"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <meta-data
@@ -58,10 +59,6 @@
             android:exported="true" >
         </provider>
 
-        <activity
-            android:name=".ui.TestFBActivity"
-            android:label="@string/title_activity_test_fb" >
-        </activity>
     </application>
 
 </manifest>

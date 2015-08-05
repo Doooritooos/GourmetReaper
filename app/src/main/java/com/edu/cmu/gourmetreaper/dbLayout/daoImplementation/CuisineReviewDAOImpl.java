@@ -84,6 +84,7 @@ public class CuisineReviewDAOImpl implements CuisineReviewDAO {
         );
 
         List<CuisineReview> reviews = new ArrayList<>();
+        if (c == null) return reviews;
 
         c.moveToFirst();
         while (!c.isAfterLast()) {
@@ -185,6 +186,8 @@ public class CuisineReviewDAOImpl implements CuisineReviewDAO {
         );
 
         List<CuisineReview> reviews = new ArrayList<>();
+
+        if (c == null) return reviews;
 
         c.moveToFirst();
         while (!c.isAfterLast()) {

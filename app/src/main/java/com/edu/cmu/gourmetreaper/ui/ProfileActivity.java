@@ -11,25 +11,12 @@ import android.view.View;
 import com.edu.cmu.gourmetreaper.R;
 
 
-public class ProfileActivity extends Activity {
+public class ProfileActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-    }
-
-    public void viewOrder(View v) {
-
-    }
-    public void shareFav(View v) {
-
-    }
-    public void getCoupon(View v) {
-
-    }
-    public void makeFriend(View v) {
-
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -17,17 +18,21 @@ import com.edu.cmu.gourmetreaper.entities.Cuisine;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Doris on 8/3/15.
  */
 class CustomAdapter extends ArrayAdapter<String> implements AdapterView.OnItemSelectedListener {
     private CuisineDAO cd;
+    //private static Map<String, Double> priceMap = new HashMap<>();
+    //private Context mContext;
 
     public CustomAdapter(Context context, List<String> chosenList) {
         super(context, R.layout.custom_row, chosenList);
-
+        //mContext = context;
     }
 
     @Override
@@ -63,16 +68,28 @@ class CustomAdapter extends ArrayAdapter<String> implements AdapterView.OnItemSe
         quanSpinner.setSelection(0);
         quanSpinner.setOnItemSelectedListener(this);
 
+//        priceMap.put(c.getCuisineName(), c.getPrice() * Integer.parseInt(quanSpinner.getSelectedItem().toString()));
+//
+//        Button btn= (Button)customView.findViewById(R.id.checkOrderButton);
+//        btn.setOnClickListener(new Button.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (mContext instanceof OrderActivity) {
+//                    ((OrderActivity) mContext).sumUp(priceMap);
+//                }
+//            }
+//        });
+
         return customView;
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
 }

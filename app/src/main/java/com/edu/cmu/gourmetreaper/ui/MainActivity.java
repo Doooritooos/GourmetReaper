@@ -57,7 +57,7 @@ public class MainActivity extends TabActivity {
         TabHost.TabSpec tabUser = tabHost
                 .newTabSpec("User")
                 .setIndicator("User", resources.getDrawable(R.drawable.icon_user_config))
-                .setContent(new Intent().setClass(this, ConnectFBActivity.class));
+                .setContent(new Intent().setClass(this, ProfileActivity.class));
 
         // add all tabs
         tabHost.addTab(tabHome);

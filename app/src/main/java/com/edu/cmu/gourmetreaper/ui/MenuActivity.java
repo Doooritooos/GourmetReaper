@@ -63,10 +63,8 @@ public class MenuActivity extends Activity {
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
                     chosenList.add(d1);
-                    Toast.makeText(getApplicationContext(), d1 + " chosen", Toast.LENGTH_LONG).show();
                 } else {
                     chosenList.remove(d1);
-                    Toast.makeText(getApplicationContext(), d1 + " not chosen", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -77,10 +75,8 @@ public class MenuActivity extends Activity {
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
                     chosenList.add(d2);
-                    Toast.makeText(getApplicationContext(), d2 + " chosen", Toast.LENGTH_LONG).show();
                 } else {
                     chosenList.remove(d2);
-                    Toast.makeText(getApplicationContext(), d2 + " not chosen", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -92,10 +88,8 @@ public class MenuActivity extends Activity {
 
                 if (((CheckBox) v).isChecked()) {
                     chosenList.add(d3);
-                    Toast.makeText(getApplicationContext(), d3 + " chosen", Toast.LENGTH_LONG).show();
                 } else {
                     chosenList.remove(d3);
-                    Toast.makeText(getApplicationContext(), d3 + " not chosen", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -107,10 +101,8 @@ public class MenuActivity extends Activity {
 
                 if (((CheckBox) v).isChecked()) {
                     chosenList.add(d4);
-                    Toast.makeText(getApplicationContext(), d4 + " chosen", Toast.LENGTH_LONG).show();
                 } else {
                     chosenList.remove(d4);
-                    Toast.makeText(getApplicationContext(), d4 + " not chosen", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -121,10 +113,8 @@ public class MenuActivity extends Activity {
 
                 if (((CheckBox) v).isChecked()) {
                     chosenList.add(d5);
-                    Toast.makeText(getApplicationContext(), d5 + " chosen", Toast.LENGTH_LONG).show();
                 } else {
                     chosenList.remove(d5);
-                    Toast.makeText(getApplicationContext(), d5 + " not chosen", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -135,10 +125,8 @@ public class MenuActivity extends Activity {
 
                 if (((CheckBox) v).isChecked()) {
                     chosenList.add(d6);
-                    Toast.makeText(getApplicationContext(), d6 + " chosen", Toast.LENGTH_LONG).show();
                 } else {
                     chosenList.remove(d6);
-                    Toast.makeText(getApplicationContext(), d6 + " not chosen", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -150,10 +138,8 @@ public class MenuActivity extends Activity {
 
                 if (((CheckBox) v).isChecked()) {
                     chosenList.add(d7);
-                    Toast.makeText(getApplicationContext(), d7 + " chosen", Toast.LENGTH_LONG).show();
                 } else {
                     chosenList.remove(d7);
-                    Toast.makeText(getApplicationContext(), d7 + " not chosen", Toast.LENGTH_LONG).show();
                 }
             }
         });

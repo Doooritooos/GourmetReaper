@@ -86,13 +86,15 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="Connect Facebook"
         android:id="@+id/ConnFBButton"
         android:layout_below="@+id/friendText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="138dp"
-        android:onClick="connFB" />
+        android:onClick="connFB"
+        android:background="#ffffbf00"
+        android:textColor="#ffffff" />
 
 
 </RelativeLayout>
