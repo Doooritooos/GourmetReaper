@@ -18,9 +18,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,14 +63,18 @@ public class DetailActivity extends Activity {
     private Cuisine c;
     private List<CuisineReview> crList;
     private TextView dishTitle, disText;
+    private Button addButton;
     private ImageView dishImg1, dishImg2;
     private EditText dishComInput;
     private TextView dishComText1, dishComText2, reviewNum;
+    private ArrayList<String> chosenList;
     private CallbackManager callbackManager;
     private AccessTokenTracker mTokenTracker;
     private ProfileTracker mProfileTracker;
     private ImageButton postButton;
     private ImageView selectButton, fromGallery;
+    private RatingBar ratingBar;
+    private TextView txtRatingValue;
     private static final int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     private FacebookService facebookService;
     private FacebookCallback<LoginResult> mCallback = new FacebookCallback<LoginResult>() {
@@ -99,7 +105,24 @@ public class DetailActivity extends Activity {
         initReview();
         initFacebook();
         showReview();
+        addListenerOnRatingBar();
     }
+
+    public void addListenerOnRatingBar() {
+
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        txtRatingValue = (TextView) findViewById(R.id.txtRatingValue);
+
+        //if rating value is changed,
+        //display the current rating value in the result (textview) automatically
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                txtRatingValue.setText(String.valueOf(rating));
+            }
+        });
+    }
+
 
     public void initFacebook() {
         FacebookSdk.sdkInitialize(this.getApplicationContext());
@@ -134,14 +157,24 @@ public class DetailActivity extends Activity {
         dishImg1 = (ImageView) findViewById(R.id.dishImg1);
         cd = new CuisineDAOImpl(this);
         Bundle dishMsg = getIntent().getExtras();
-        if (dishMsg == null) {
-            return;
-        }
+
         String dishName = dishMsg.getString("dishName");
         c = cd.getCuisineByName(dishName);
         dishTitle.setText(c.getCuisineName());
         disText.setText(c.getCuisineDescription());
         dishImg1.setImageBitmap(c.getImage());
+
+        addButton = (Button) findViewById(R.id.addButton);
+        chosenList = getIntent().getStringArrayListExtra("chosenList");
+        if (chosenList != null && chosenList.size() > 0) {
+            for (String dish : chosenList) {
+                if (dish.equals(dishName)) {
+                    addButton.setText("Added");
+                    break;
+                }
+            }
+        }
+
     }
 
     public void initReview() {
@@ -152,7 +185,7 @@ public class DetailActivity extends Activity {
         reviewNum = (TextView) findViewById(R.id.reviewNum);
         dishComInput = (EditText) findViewById(R.id.dishComInput);
 
-        reviewNum.setText(crList.size() + " Reviews");
+        updateReviewNum();
         postButton = (ImageButton) findViewById(R.id.fbShareButton);
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,6 +203,18 @@ public class DetailActivity extends Activity {
                 selectImage();
             }
         });
+    }
+
+    public void updateReviewNum() {
+        reviewNum.setText(crList.size() + " Reviews");
+    }
+
+    public void addToOrder(View view) {
+        if (addButton.getText().toString().equals("Added")) {
+            addButton.setText("Add to order");
+        } else {
+            addButton.setText("Added");
+        }
     }
 
 
@@ -306,27 +351,34 @@ public class DetailActivity extends Activity {
     public void showReview() {
         crList = crd.getAllCuisineReviewWithCuisine(c.getCuisineID());
         if (crList != null && crList.size() > 0) {
-            if (crList.get(0) != null) {
-                dishComText1.setText(crList.get(0).getComment());
+            if (crList.size() > 0 && crList.get(0) != null) {
+                dishComText1.setText(crList.get(0).getComment() + " rating: " + crList.get(0).getRating());
+            } else {
+                dishComText1.setText("There is no comments yet");
             }
-            if (crList.get(1) != null) {
-                dishComText2.setText(crList.get(1).getComment());
+            if (crList.size() > 1 && crList.get(1) != null) {
+                dishComText2.setText(crList.get(1).getComment() + " rating: " + crList.get(1).getRating());
+            } else {
+                dishComText2.setText("There is no comments yet");
             }
-        } else {
-            dishComText1.setText("There is no comments yet");
         }
     }
 
     public void submitReview(View view) {
         CuisineReview cr = new CuisineReview();
         cr.setComment(dishComInput.getText().toString());
-        cr.setRating(5);
+        if (txtRatingValue.getText() == null || txtRatingValue.getText().toString().length() == 0) {
+            cr.setRating(0);
+        } else {
+            cr.setRating((int) Double.parseDouble(txtRatingValue.getText().toString()));
+        }
         List<Bitmap> imgs = new ArrayList<>();
         fromGallery.buildDrawingCache();
         Bitmap bmap = fromGallery.getDrawingCache();
         imgs.add(bmap);
         cr.setImages(imgs);
-        crd.insertCuisineReview(cr);
+        crd.insertCuisineReview(cr, c.getCuisineID());
         showReview();
+        updateReviewNum();
     }
 }

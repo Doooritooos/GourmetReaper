@@ -237,6 +237,7 @@ public class MenuActivity extends Activity {
             dishName = d7;
         }
         i.putExtra("dishName", dishName);
+        i.putStringArrayListExtra("chosenList", chosenList);
         startActivity(i);
     }
 

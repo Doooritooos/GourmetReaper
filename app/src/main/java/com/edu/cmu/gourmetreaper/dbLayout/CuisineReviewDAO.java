@@ -17,7 +17,7 @@ public interface CuisineReviewDAO {
      * Insert a new cuisine review into the database
      * @param cuisineReview new cuisine review adding into the database
      */
-    public void insertCuisineReview(CuisineReview cuisineReview);
+    public void insertCuisineReview(CuisineReview cuisineReview, int cuisineID);
 
     /**
      * Get all the cuisine reviews sorted by time, from latest to oldest
