@@ -11,7 +11,7 @@ import android.view.View;
 import com.edu.cmu.gourmetreaper.R;
 
 
-public class ProfileActivity extends ActionBarActivity {
+public class ProfileActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

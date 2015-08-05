@@ -119,8 +119,8 @@ public class CuisineDAOImpl implements CuisineDAO {
         );
 
         List<Cuisine> cuisines = new ArrayList<>();
+        if (c == null || c.getCount() == 0) return cuisines;
 
-        if (c.getCount() == 0) return cuisines;
         c.moveToFirst();
         while (!c.isAfterLast()) {
 

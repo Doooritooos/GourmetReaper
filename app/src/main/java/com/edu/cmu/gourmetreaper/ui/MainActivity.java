@@ -36,7 +36,11 @@ public class MainActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initTable();
+        ccd = new CuisineCategoryDAOImpl(this);
+        cd = new CuisineDAOImpl(this);
+        if (cd.getAllCuisine() == null || ccd.getAllCuisineCategory() == null) {
+            initTable();
+        }
 
         Resources resources = getResources();
         final TabHost tabHost = (TabHost) findViewById(android.R.id.tabhost);
@@ -72,13 +76,6 @@ public class MainActivity extends TabActivity {
         tabHost.addTab(tabOrder);
         tabHost.addTab(tabUser);
 
-//        // set color
-//        for(int i=0;i<tabHost.getTabWidget().getChildCount();i++)
-//        {
-//            TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
-//            tv.setTextColor(Color.parseColor("#000000"));
-//        }
-
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 
             @Override
@@ -87,7 +84,7 @@ public class MainActivity extends TabActivity {
                 for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
                     tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#EAEAEA")); // unselected
                     TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
-                    tv.setTextColor(Color.parseColor("#FFBF00"));
+                    tv.setTextColor(Color.parseColor("#787878"));
                 }
 
                 tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFBF00")); // selected
@@ -97,12 +94,17 @@ public class MainActivity extends TabActivity {
             }
         });
 
-
         //set Windows tab as default (zero based)
         tabHost.setCurrentTab(0);
+        for (int i = 1; i < tabHost.getTabWidget().getChildCount(); i++) {
+            tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#EAEAEA")); // unselected
+            TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+            tv.setTextColor(Color.parseColor("#787878"));
+        }
         tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFBF00")); // selected
         TextView tv = (TextView) tabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
         tv.setTextColor(Color.parseColor("#FFFFFF"));
+
         // play music
         song1 = MediaPlayer.create(this, R.raw.lost_stars);
         switchSong1();
@@ -117,7 +119,7 @@ public class MainActivity extends TabActivity {
     }
 
     private void initCategory() {
-        ccd = new CuisineCategoryDAOImpl(this);
+
         CuisineCategory cc1 = new CuisineCategory();
         cc1.setCategoryName("Appetizer");
         ccd.insertCuisineCategory(cc1);
@@ -133,7 +135,7 @@ public class MainActivity extends TabActivity {
     }
 
     private void initCuisine() {
-        cd = new CuisineDAOImpl(this);
+
         // appetizer
         Cuisine c1 = new Cuisine();
         c1.setCuisineName("Baked Grits");
@@ -144,7 +146,7 @@ public class MainActivity extends TabActivity {
 
         Cuisine c2 = new Cuisine();
         c2.setCuisineName("Baby Bleu Salad");
-        c2.setCuisineDescription("Mixed spring salad greens, blue cheese, oranges, fresh strawberries");
+        c2.setCuisineDescription("Mixed greens, blue cheese, oranges, strawberries");
         c2.setPrice(10.99);
         c2.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.dish_baby_bleu));
         cd.insertCuisineWithCategory(c2, 1);
@@ -181,7 +183,7 @@ public class MainActivity extends TabActivity {
         // dessert
         Cuisine c7 = new Cuisine();
         c7.setCuisineName("Black Bottom Pie");
-        c7.setCuisineDescription("Dark-chocolate custard, chiffon, freshly whipped cream");
+        c7.setCuisineDescription("Dark-chocolate custard, chiffon, whipped cream");
         c7.setPrice(8.99);
         c7.setImage(BitmapFactory.decodeResource(getResources(), R.drawable.dish_black_bottom_pie));
         cd.insertCuisineWithCategory(c7, 3);
