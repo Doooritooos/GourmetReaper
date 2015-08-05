@@ -32,8 +32,9 @@ public class OrderActivity extends Activity {
     private ListAdapter myAdapter;
     private ListAdapter listAdapter;
     private ListView myListView;
-    private static SharedPreferences mSettings;
-    private static SharedPreferences.Editor editor;
+    private SharedPreferences mSettings;
+    private SharedPreferences.Editor editor;
+    private static double sum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +44,12 @@ public class OrderActivity extends Activity {
         editor = mSettings.edit();
         if (mSettings.getStringSet("orderSet", null) != null) {
             chosenList = new ArrayList<>(mSettings.getStringSet("orderSet", null));
+        }
+        if (getIntent().getExtras() != null) {
+            String singleDish = getIntent().getExtras().getString("singleDish");
+            if (!chosenList.contains(singleDish)) {
+                chosenList.add(singleDish);
+            }
         }
         showDate();
         showChosenList();
@@ -64,6 +71,7 @@ public class OrderActivity extends Activity {
 
         myAdapter = new CustomAdapter(this, chosenList);
         myListView.setAdapter(myAdapter);
+        sumUp();
 
     }
 
@@ -76,7 +84,7 @@ public class OrderActivity extends Activity {
 
     }
 
-    private double sumUp() {
+    private void sumUp() {
         double total = 0;
         for (int i = 0; i < myListView.getAdapter().getCount(); i++) {
             View eachView = myListView.getAdapter().getView(i, null, myListView);
@@ -85,12 +93,12 @@ public class OrderActivity extends Activity {
             total += Double.parseDouble(priceText.getText().toString().substring(2)) * Integer.parseInt(quanSpinner.getSelectedItem().toString());
 
         }
-        return total;
+        sum = total;
 
     }
 
     public void checkout(View view) {
         totalPriceTitle = (TextView) findViewById(R.id.totalPriceTitle);
-        totalPriceTitle.setText("Total Price: $ " + String.format("%1$,.2f", sumUp()));
+        totalPriceTitle.setText("Total Price: $ " + String.format("%1$,.2f", sum));
     }
 }

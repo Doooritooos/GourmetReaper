@@ -109,8 +109,8 @@
         android:id="@+id/recText1"
         android:textSize="10dp"
         android:layout_below="@+id/recImg1"
-        android:layout_toRightOf="@+id/imageView2"
-        android:layout_toEndOf="@+id/imageView2" />
+        android:layout_alignLeft="@+id/recImg1"
+        android:layout_alignStart="@+id/recImg1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -118,9 +118,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/recText2"
         android:id="@+id/recText2"
-        android:layout_alignTop="@+id/recText1"
-        android:layout_centerHorizontal="true"
-        android:textSize="10dp" />
+        android:textSize="10dp"
+        android:layout_below="@+id/recImg2"
+        android:layout_alignLeft="@+id/recImg2"
+        android:layout_alignStart="@+id/recImg2" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -130,8 +131,8 @@
         android:id="@+id/recText3"
         android:textSize="10dp"
         android:layout_below="@+id/recImg3"
-        android:layout_alignLeft="@+id/popText3"
-        android:layout_alignStart="@+id/popText3" />
+        android:layout_alignLeft="@+id/recImg3"
+        android:layout_alignStart="@+id/recImg3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -162,11 +163,9 @@
         android:text="@string/popText3"
         android:id="@+id/popText3"
         android:textSize="10dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginEnd="13dp"
         android:layout_below="@+id/popImg3"
-        android:layout_alignRight="@+id/popImg3"
-        android:layout_alignEnd="@+id/popImg3" />
+        android:layout_alignLeft="@+id/popImg3"
+        android:layout_alignStart="@+id/popImg3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -211,8 +210,8 @@
         android:id="@+id/dishComText1"
         android:textSize="10dp"
         android:layout_alignBottom="@+id/imageView"
-        android:layout_toRightOf="@+id/popText1"
-        android:layout_toEndOf="@+id/popText1" />
+        android:layout_alignRight="@+id/homeRatingBar"
+        android:layout_alignEnd="@+id/homeRatingBar" />
 
     <EditText
         android:layout_width="wrap_content"
