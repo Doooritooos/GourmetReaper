@@ -32,10 +32,11 @@ public class CuisineReviewDAOImpl implements CuisineReviewDAO {
     }
 
     @Override
-    public void insertCuisineReview(CuisineReview cuisineReview) {
+    public void insertCuisineReview(CuisineReview cuisineReview, int cuisineID) {
         ContentValues values = new ContentValues();
         values.put(LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_RATING, cuisineReview.getRating());
         values.put(LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_COMMENT, cuisineReview.getComment());
+        values.put(LighteningOrderContract.CuisineReviewTable.COLUMN_NAME_CUISINE_ID, cuisineID);
 
         DBConnector connector = new DBConnector(context);
         connector.open();

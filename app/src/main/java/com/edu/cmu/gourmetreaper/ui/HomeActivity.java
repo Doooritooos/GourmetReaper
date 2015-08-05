@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,6 +62,8 @@ public class HomeActivity extends Activity {
     private ImageView recImg1, recImg2, recImg3, popImg1, popImg2, popImg3;
     private TextView recText1, recText2, recText3, popText1, popText2, popText3, comText1;
     private EditText comInput;
+    private RatingBar homeRatingBar;
+    private TextView textRatingVale;
 
     private CallbackManager callbackManager;
     private AccessTokenTracker mTokenTracker;
@@ -100,8 +103,25 @@ public class HomeActivity extends Activity {
         initRecAndPop();
         initReview();
         initFacebook();
+        addListenerOnRatingBar();
         showReview();
     }
+
+    public void addListenerOnRatingBar() {
+
+        homeRatingBar = (RatingBar) findViewById(R.id.homeRatingBar);
+        textRatingVale = (TextView) findViewById(R.id.textRatingValue);
+
+        //if rating value is changed,
+        //display the current rating value in the result (textview) automatically
+        homeRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                textRatingVale.setText(String.valueOf(rating));
+            }
+        });
+    }
+
 
     private void initRecAndPop() {
         List<Cuisine> allList = cd.getAllCuisine();
@@ -190,7 +210,11 @@ public class HomeActivity extends Activity {
 
     public void submitRestReview(View view) {
         RestaurantReview rr = new RestaurantReview();
-        rr.setRating(5);
+        if (textRatingVale.getText() == null || textRatingVale.getText().toString().length() == 0) {
+            rr.setRating(0);
+        } else {
+            rr.setRating((int) Double.parseDouble(textRatingVale.getText().toString()));
+        }
         rr.setComment(comInput.getText().toString());
         rrd.insertRestaurantReview(rr);
         showReview();

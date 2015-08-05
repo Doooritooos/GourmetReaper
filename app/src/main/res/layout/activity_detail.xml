@@ -22,11 +22,9 @@
         android:layout_height="15dp"
         android:id="@+id/star1"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/dishTitle"
-        android:layout_toRightOf="@+id/commentTitle"
-        android:layout_toEndOf="@+id/commentTitle"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp" />
+        android:layout_above="@+id/disText"
+        android:layout_toRightOf="@+id/showImg"
+        android:layout_toEndOf="@+id/showImg" />
 
     <ImageView
         android:layout_width="15dp"
@@ -101,7 +99,8 @@
         android:layout_alignStart="@+id/disText"
         android:layout_marginTop="20dp"
         android:background="#ffffbf00"
-        android:textColor="#ffffffff" />
+        android:textColor="#ffffffff"
+        android:onClick="addToOrder" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -286,56 +285,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dishComInput"
-        android:width="250dp"
+        android:width="160dp"
         android:textSize="12dp"
         android:layout_below="@+id/uploadImg"
         android:layout_alignLeft="@+id/uploadImg"
         android:layout_alignStart="@+id/uploadImg" />
-
-    <ImageView
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:id="@+id/imageView21"
-        android:src="@drawable/grey_star"
-        android:layout_below="@+id/showImg"
-        android:layout_alignLeft="@+id/reviewNum"
-        android:layout_alignStart="@+id/reviewNum" />
-
-    <ImageView
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:id="@+id/imageView22"
-        android:src="@drawable/grey_star"
-        android:layout_alignTop="@+id/imageView21"
-        android:layout_toRightOf="@+id/imageView21"
-        android:layout_toEndOf="@+id/imageView21" />
-
-    <ImageView
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:id="@+id/imageView23"
-        android:src="@drawable/grey_star"
-        android:layout_alignTop="@+id/imageView22"
-        android:layout_toRightOf="@+id/imageView22"
-        android:layout_toEndOf="@+id/imageView22" />
-
-    <ImageView
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:id="@+id/imageView24"
-        android:src="@drawable/grey_star"
-        android:layout_alignTop="@+id/imageView23"
-        android:layout_toRightOf="@+id/imageView23"
-        android:layout_toEndOf="@+id/imageView23" />
-
-    <ImageView
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:id="@+id/imageView25"
-        android:src="@drawable/grey_star"
-        android:layout_alignTop="@+id/imageView24"
-        android:layout_toRightOf="@+id/imageView24"
-        android:layout_toEndOf="@+id/imageView24" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -389,9 +343,38 @@
         android:layout_height="80dp"
         android:id="@+id/showImg"
         android:src="@drawable/menu"
-        android:layout_alignTop="@+id/uploadImg"
-        android:layout_toRightOf="@+id/commentTitle"
-        android:layout_toEndOf="@+id/commentTitle" />
+        android:layout_below="@+id/commentTitle"
+        android:layout_toRightOf="@+id/uploadImg"
+        android:layout_toEndOf="@+id/uploadImg" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_alignBottom="@+id/dishComInput"
+        android:layout_toRightOf="@+id/dishComInput"
+        android:layout_toEndOf="@+id/dishComInput"
+        android:layout_gravity="right" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/txtRatingValue"
+        android:layout_alignBottom="@+id/ratingBar"
+        android:layout_alignRight="@+id/reviewNum"
+        android:layout_alignEnd="@+id/reviewNum"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:id="@+id/imageView3"
+        android:src="@drawable/star"
+        android:layout_alignTop="@+id/imageView19"
+        android:layout_toRightOf="@+id/imageView19"
+        android:layout_toEndOf="@+id/imageView19" />
 
 
 </RelativeLayout>

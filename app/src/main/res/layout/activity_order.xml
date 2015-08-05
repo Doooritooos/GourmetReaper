@@ -22,7 +22,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/totalPriceTitle"
         android:id="@+id/totalPriceTitle"
         android:textSize="15dp"
         android:textColor="#FFAB08"
@@ -42,7 +41,8 @@
         android:layout_marginBottom="52dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:onClick="checkout" />
 
     <ListView
         android:layout_width="wrap_content"
