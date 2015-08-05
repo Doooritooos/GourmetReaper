@@ -86,7 +86,6 @@ public class DetailActivity extends Activity {
             AccessToken accessToken = loginResult.getAccessToken();
             Profile profile = Profile.getCurrentProfile();
             postButton.setVisibility(View.VISIBLE);
-
         }
 
         @Override
@@ -255,10 +254,12 @@ public class DetailActivity extends Activity {
     }
 
     public void addToOrder(View view) {
-        if (addButton.getText().toString().equals("Added")) {
-            addButton.setText("Add to order");
-        } else {
+        if (addButton.getText().toString().equals("Add to order")) {
             addButton.setText("Added");
+            Intent i = new Intent(this, OrderActivity.class);
+            i.putExtra("singleDish", c.getCuisineName());
+            startActivity(i);
+
         }
     }
 
