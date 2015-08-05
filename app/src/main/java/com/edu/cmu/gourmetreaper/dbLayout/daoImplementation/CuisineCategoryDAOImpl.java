@@ -64,9 +64,9 @@ public class CuisineCategoryDAOImpl implements CuisineCategoryDAO {
                 sortOrder                                 // The sort order
         );
 
-        List<CuisineCategory> categories = new ArrayList<>();
+        if (c == null || c.getCount() == 0) return null;
 
-        if (c.getCount() == 0) return categories;
+        List<CuisineCategory> categories = new ArrayList<>();
         c.moveToFirst();
         while (!c.isAfterLast()) {
 

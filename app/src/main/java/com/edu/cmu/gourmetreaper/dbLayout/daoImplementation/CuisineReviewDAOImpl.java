@@ -84,8 +84,8 @@ public class CuisineReviewDAOImpl implements CuisineReviewDAO {
                 sortOrder                                 // The sort order
         );
 
+        if (c == null || c.getCount() == 0) return null;
         List<CuisineReview> reviews = new ArrayList<>();
-        if (c == null) return reviews;
 
         c.moveToFirst();
         while (!c.isAfterLast()) {

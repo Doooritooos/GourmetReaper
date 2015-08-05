@@ -499,6 +499,9 @@ public class DetailActivity extends Activity {
     private int getAvgReviewRating() {
         int totalRating = 0;
         List<CuisineReview> allList = crd.getAllCuisineReviewWithCuisine(c.getCuisineID());
+        if (allList == null || allList.size() == 0) {
+            return 0;
+        }
         for (CuisineReview cuisineReview : allList) {
             totalRating += cuisineReview.getRating();
         }

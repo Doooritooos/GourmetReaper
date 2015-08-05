@@ -105,12 +105,11 @@ public class DBConnector {
     {
         // public constructor
         public DatabaseOpenHelper(Context context, String name,
-                                  SQLiteDatabase.CursorFactory factory, int version)
-        {
+                                  SQLiteDatabase.CursorFactory factory, int version) {
             super(context, name, factory, version);
         } // end DatabaseOpenHelper constructor
 
-        // creates the mortgages table when the database is created
+        // creates table when the database is created
         @Override
         public void onCreate(SQLiteDatabase db)
         {
