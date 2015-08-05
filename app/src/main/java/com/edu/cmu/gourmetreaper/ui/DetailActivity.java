@@ -67,6 +67,9 @@ public class DetailActivity extends Activity {
     private ImageView dishImg1, dishImg2;
     private EditText dishComInput;
     private TextView dishComText1, dishComText2, reviewNum;
+    private ImageView com1Star1, com1Star2, com1Star3, com1Star4, com1Star5;
+    private ImageView com2Star1, com2Star2, com2Star3, com2Star4, com2Star5;
+    private ImageView avgStar1, avgStar2, avgStar3, avgStar4, avgStar5;
     private ArrayList<String> chosenList;
     private CallbackManager callbackManager;
     private AccessTokenTracker mTokenTracker;
@@ -131,19 +134,11 @@ public class DetailActivity extends Activity {
         mTokenTracker = new AccessTokenTracker() {
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken old, AccessToken newToken) {
-
-                if (newToken == null) {
-
-                }
             }
         };
         mProfileTracker = new ProfileTracker() {
             @Override
             protected void onCurrentProfileChanged(Profile oldProfile, Profile newProfile) {
-
-                if (newProfile == null) {
-
-                }
             }
         };
         facebookService = new FacebookService(mTokenTracker, mProfileTracker);
@@ -182,10 +177,25 @@ public class DetailActivity extends Activity {
         crList = crd.getAllCuisineReviewWithCuisine(c.getCuisineID());
         dishComText1 = (TextView) findViewById(R.id.dishComText1);
         dishComText2 = (TextView) findViewById(R.id.dishComText2);
+        com1Star1 = (ImageView) findViewById(R.id.com1Star1);
+        com1Star2 = (ImageView) findViewById(R.id.com1Star2);
+        com1Star3 = (ImageView) findViewById(R.id.com1Star3);
+        com1Star4 = (ImageView) findViewById(R.id.com1Star4);
+        com1Star5 = (ImageView) findViewById(R.id.com1Star5);
+        com2Star1 = (ImageView) findViewById(R.id.com2Star1);
+        com2Star2 = (ImageView) findViewById(R.id.com2Star2);
+        com2Star3 = (ImageView) findViewById(R.id.com2Star3);
+        com2Star4 = (ImageView) findViewById(R.id.com2Star4);
+        com2Star5 = (ImageView) findViewById(R.id.com2Star5);
+        avgStar1 = (ImageView) findViewById(R.id.avgStar1);
+        avgStar2 = (ImageView) findViewById(R.id.avgStar2);
+        avgStar3 = (ImageView) findViewById(R.id.avgStar3);
+        avgStar4 = (ImageView) findViewById(R.id.avgStar4);
+        avgStar5 = (ImageView) findViewById(R.id.avgStar5);
+
         reviewNum = (TextView) findViewById(R.id.reviewNum);
         dishComInput = (EditText) findViewById(R.id.dishComInput);
 
-        updateReviewNum();
         postButton = (ImageButton) findViewById(R.id.fbShareButton);
         postButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,6 +219,41 @@ public class DetailActivity extends Activity {
         reviewNum.setText(crList.size() + " Reviews");
     }
 
+    public void updateReviewRating() {
+        avgStar1.setVisibility(View.INVISIBLE);
+        avgStar2.setVisibility(View.INVISIBLE);
+        avgStar3.setVisibility(View.INVISIBLE);
+        avgStar4.setVisibility(View.INVISIBLE);
+        avgStar5.setVisibility(View.INVISIBLE);
+        switch (getAvgReviewRating()) {
+            case 1:
+                avgStar1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                avgStar1.setVisibility(View.VISIBLE);
+                avgStar2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                avgStar1.setVisibility(View.VISIBLE);
+                avgStar2.setVisibility(View.VISIBLE);
+                avgStar3.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                avgStar1.setVisibility(View.VISIBLE);
+                avgStar2.setVisibility(View.VISIBLE);
+                avgStar3.setVisibility(View.VISIBLE);
+                avgStar4.setVisibility(View.VISIBLE);
+                break;
+            case 5:
+                avgStar1.setVisibility(View.VISIBLE);
+                avgStar2.setVisibility(View.VISIBLE);
+                avgStar3.setVisibility(View.VISIBLE);
+                avgStar4.setVisibility(View.VISIBLE);
+                avgStar5.setVisibility(View.VISIBLE);
+                break;
+        }
+    }
+
     public void addToOrder(View view) {
         if (addButton.getText().toString().equals("Added")) {
             addButton.setText("Add to order");
@@ -216,7 +261,6 @@ public class DetailActivity extends Activity {
             addButton.setText("Added");
         }
     }
-
 
     private void sharePhotoToFacebook() {
         if (Profile.getCurrentProfile() == null) {
@@ -349,22 +393,93 @@ public class DetailActivity extends Activity {
     }
 
     public void showReview() {
+        com1Star1.setVisibility(View.INVISIBLE);
+        com1Star2.setVisibility(View.INVISIBLE);
+        com1Star3.setVisibility(View.INVISIBLE);
+        com1Star4.setVisibility(View.INVISIBLE);
+        com1Star5.setVisibility(View.INVISIBLE);
+        com2Star1.setVisibility(View.INVISIBLE);
+        com2Star2.setVisibility(View.INVISIBLE);
+        com2Star3.setVisibility(View.INVISIBLE);
+        com2Star4.setVisibility(View.INVISIBLE);
+        com2Star5.setVisibility(View.INVISIBLE);
+
         crList = crd.getAllCuisineReviewWithCuisine(c.getCuisineID());
         if (crList != null && crList.size() > 0) {
             if (crList.size() > 0 && crList.get(0) != null) {
-                dishComText1.setText(crList.get(0).getComment() + " rating: " + crList.get(0).getRating());
+                dishComText1.setText(crList.get(0).getComment());
+                switch (crList.get(0).getRating()) {
+                    case 1:
+                        com1Star1.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        com1Star1.setVisibility(View.VISIBLE);
+                        com1Star2.setVisibility(View.VISIBLE);
+                        break;
+                    case 3:
+                        com1Star1.setVisibility(View.VISIBLE);
+                        com1Star2.setVisibility(View.VISIBLE);
+                        com1Star3.setVisibility(View.VISIBLE);
+                        break;
+                    case 4:
+                        com1Star1.setVisibility(View.VISIBLE);
+                        com1Star2.setVisibility(View.VISIBLE);
+                        com1Star3.setVisibility(View.VISIBLE);
+                        com1Star4.setVisibility(View.VISIBLE);
+                        break;
+                    case 5:
+                        com1Star1.setVisibility(View.VISIBLE);
+                        com1Star2.setVisibility(View.VISIBLE);
+                        com1Star3.setVisibility(View.VISIBLE);
+                        com1Star4.setVisibility(View.VISIBLE);
+                        com1Star5.setVisibility(View.VISIBLE);
+                        break;
+                }
             } else {
                 dishComText1.setText("There is no comments yet");
             }
             if (crList.size() > 1 && crList.get(1) != null) {
-                dishComText2.setText(crList.get(1).getComment() + " rating: " + crList.get(1).getRating());
+                dishComText2.setText(crList.get(1).getComment());
+                switch (crList.get(1).getRating()) {
+                    case 1:
+                        com2Star1.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        com2Star1.setVisibility(View.VISIBLE);
+                        com2Star2.setVisibility(View.VISIBLE);
+                        break;
+                    case 3:
+                        com2Star1.setVisibility(View.VISIBLE);
+                        com2Star2.setVisibility(View.VISIBLE);
+                        com2Star3.setVisibility(View.VISIBLE);
+                        break;
+                    case 4:
+                        com2Star1.setVisibility(View.VISIBLE);
+                        com2Star2.setVisibility(View.VISIBLE);
+                        com2Star3.setVisibility(View.VISIBLE);
+                        com2Star4.setVisibility(View.VISIBLE);
+                        break;
+                    case 5:
+                        com2Star1.setVisibility(View.VISIBLE);
+                        com2Star2.setVisibility(View.VISIBLE);
+                        com2Star3.setVisibility(View.VISIBLE);
+                        com2Star4.setVisibility(View.VISIBLE);
+                        com2Star5.setVisibility(View.VISIBLE);
+                        break;
+                }
             } else {
                 dishComText2.setText("There is no comments yet");
             }
         }
+        updateReviewRating();
+        updateReviewNum();
     }
 
     public void submitReview(View view) {
+        if (dishComInput.getText() == null || dishComInput.getText().toString().trim().length() == 0) {
+            Toast.makeText(this, "Please type in your comments", Toast.LENGTH_LONG).show();
+            return;
+        }
         CuisineReview cr = new CuisineReview();
         cr.setComment(dishComInput.getText().toString());
         if (txtRatingValue.getText() == null || txtRatingValue.getText().toString().length() == 0) {
@@ -379,6 +494,14 @@ public class DetailActivity extends Activity {
         cr.setImages(imgs);
         crd.insertCuisineReview(cr, c.getCuisineID());
         showReview();
-        updateReviewNum();
+    }
+
+    private int getAvgReviewRating() {
+        int totalRating = 0;
+        List<CuisineReview> allList = crd.getAllCuisineReviewWithCuisine(c.getCuisineID());
+        for (CuisineReview cuisineReview : allList) {
+            totalRating += cuisineReview.getRating();
+        }
+        return totalRating / allList.size();
     }
 }

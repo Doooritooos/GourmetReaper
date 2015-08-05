@@ -210,10 +210,9 @@
         android:text="@string/comText1"
         android:id="@+id/dishComText1"
         android:textSize="10dp"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_toRightOf="@+id/recText1"
-        android:layout_toEndOf="@+id/recText1"
-        android:layout_marginTop="14dp" />
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_toRightOf="@+id/popText1"
+        android:layout_toEndOf="@+id/popText1" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -284,5 +283,50 @@
         android:layout_alignTop="@+id/homeRatingBar"
         android:layout_toRightOf="@+id/homeRatingBar"
         android:layout_marginTop="15dp" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:id="@+id/commStar1"
+        android:src="@drawable/star"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignLeft="@+id/dishComText1"
+        android:layout_alignStart="@+id/dishComText1" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:id="@+id/commStar2"
+        android:src="@drawable/star"
+        android:layout_alignTop="@+id/commStar1"
+        android:layout_toRightOf="@+id/commStar1"
+        android:layout_toEndOf="@+id/commStar1" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:id="@+id/commStar3"
+        android:src="@drawable/star"
+        android:layout_alignTop="@+id/commStar2"
+        android:layout_toRightOf="@+id/commStar2"
+        android:layout_toEndOf="@+id/commStar2" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:id="@+id/commStar4"
+        android:src="@drawable/star"
+        android:layout_alignTop="@+id/commStar3"
+        android:layout_toRightOf="@+id/commStar3"
+        android:layout_toEndOf="@+id/commStar3" />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:id="@+id/commStar5"
+        android:src="@drawable/star"
+        android:layout_alignTop="@+id/commStar4"
+        android:layout_toRightOf="@+id/commStar4"
+        android:layout_toEndOf="@+id/commStar4" />
 
 </RelativeLayout>

@@ -38,11 +38,4 @@ public class RestaurantReview {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
-    public String toString() {
-        String rrToString = "";
-        rrToString = comment + ", rating is " + rating;
-
-        return rrToString;
-    }
 }

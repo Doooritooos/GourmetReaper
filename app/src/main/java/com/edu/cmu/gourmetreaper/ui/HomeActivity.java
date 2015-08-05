@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -52,7 +53,7 @@ import java.util.List;
 /**
  * Author: Qianwen Li
  * Team: Gourmet Reapers
- * */
+ */
 public class HomeActivity extends Activity {
 
     private final static String TAG = "DorisDebug";
@@ -64,6 +65,7 @@ public class HomeActivity extends Activity {
     private EditText comInput;
     private RatingBar homeRatingBar;
     private TextView textRatingVale;
+    private ImageView commStar1, commStar2, commStar3, commStar4, commStar5;
 
     private CallbackManager callbackManager;
     private AccessTokenTracker mTokenTracker;
@@ -108,7 +110,6 @@ public class HomeActivity extends Activity {
     }
 
     public void addListenerOnRatingBar() {
-
         homeRatingBar = (RatingBar) findViewById(R.id.homeRatingBar);
         textRatingVale = (TextView) findViewById(R.id.textRatingValue);
 
@@ -166,9 +167,13 @@ public class HomeActivity extends Activity {
     private void initReview() {
         comInput = (EditText) findViewById(R.id.comInput);
         comText1 = (TextView) findViewById(R.id.dishComText1);
+        commStar1 = (ImageView) findViewById(R.id.commStar1);
+        commStar2 = (ImageView) findViewById(R.id.commStar2);
+        commStar3 = (ImageView) findViewById(R.id.commStar3);
+        commStar4 = (ImageView) findViewById(R.id.commStar4);
+        commStar5 = (ImageView) findViewById(R.id.commStar5);
 
         postButton = (ImageButton) findViewById(R.id.shareFBButton);
-
         fromGallery = (ImageView) findViewById(R.id.fromGalButton);
         fromGallery.setVisibility(View.INVISIBLE);
         selectButton = (ImageView) findViewById(R.id.selectButtonHome);
@@ -209,12 +214,17 @@ public class HomeActivity extends Activity {
     }
 
     public void submitRestReview(View view) {
+        if (comInput.getText() == null || comInput.getText().toString().trim().length() == 0) {
+            Toast.makeText(this, "Please type in your comments", Toast.LENGTH_LONG).show();
+            return;
+        }
         RestaurantReview rr = new RestaurantReview();
         if (textRatingVale.getText() == null || textRatingVale.getText().toString().length() == 0) {
             rr.setRating(0);
         } else {
             rr.setRating((int) Double.parseDouble(textRatingVale.getText().toString()));
         }
+
         rr.setComment(comInput.getText().toString());
         rrd.insertRestaurantReview(rr);
         showReview();
@@ -350,13 +360,48 @@ public class HomeActivity extends Activity {
     }
 
     public void showReview() {
+        commStar1.setVisibility(View.INVISIBLE);
+        commStar2.setVisibility(View.INVISIBLE);
+        commStar3.setVisibility(View.INVISIBLE);
+        commStar4.setVisibility(View.INVISIBLE);
+        commStar5.setVisibility(View.INVISIBLE);
         if (rrd.getAllRestaurantReview() != null && rrd.getAllRestaurantReview().size() > 0) {
-            RestaurantReview  toprr = rrd.getRestaurantReviewByID(rrd.getAllRestaurantReview().size());
-            if (toprr != null)
-                comText1.setText(toprr.toString());
+            RestaurantReview toprr = rrd.getRestaurantReviewByID(rrd.getAllRestaurantReview().size());
+            if (toprr != null) {
+                comText1.setText(toprr.getComment());
+                // set stars
+                switch (toprr.getRating()) {
+                    case 1:
+                        commStar1.setVisibility(View.VISIBLE);
+                        break;
+                    case 2:
+                        commStar1.setVisibility(View.VISIBLE);
+                        commStar2.setVisibility(View.VISIBLE);
+                        break;
+                    case 3:
+                        commStar1.setVisibility(View.VISIBLE);
+                        commStar2.setVisibility(View.VISIBLE);
+                        commStar3.setVisibility(View.VISIBLE);
+                        break;
+                    case 4:
+                        commStar1.setVisibility(View.VISIBLE);
+                        commStar2.setVisibility(View.VISIBLE);
+                        commStar3.setVisibility(View.VISIBLE);
+                        commStar4.setVisibility(View.VISIBLE);
+                        break;
+                    case 5:
+                        commStar1.setVisibility(View.VISIBLE);
+                        commStar2.setVisibility(View.VISIBLE);
+                        commStar3.setVisibility(View.VISIBLE);
+                        commStar4.setVisibility(View.VISIBLE);
+                        commStar5.setVisibility(View.VISIBLE);
+                        break;
+                }
+            }
         } else {
             comText1.setText("There is no comments yet");
         }
+
     }
 
     public void goToDetail(View view) {

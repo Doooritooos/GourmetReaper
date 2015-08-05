@@ -20,7 +20,7 @@
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/star1"
+        android:id="@+id/avgStar1"
         android:src="@drawable/star"
         android:layout_above="@+id/disText"
         android:layout_toRightOf="@+id/showImg"
@@ -29,38 +29,38 @@
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/star2"
+        android:id="@+id/avgStar2"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/star1"
-        android:layout_toRightOf="@+id/star1"
-        android:layout_toEndOf="@+id/star1" />
+        android:layout_alignTop="@+id/avgStar1"
+        android:layout_toRightOf="@+id/avgStar1"
+        android:layout_toEndOf="@+id/avgStar1" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/star3"
+        android:id="@+id/avgStar3"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/star2"
-        android:layout_toRightOf="@+id/star2"
-        android:layout_toEndOf="@+id/star2" />
+        android:layout_alignTop="@+id/avgStar2"
+        android:layout_toRightOf="@+id/avgStar2"
+        android:layout_toEndOf="@+id/avgStar2" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/star4"
+        android:id="@+id/avgStar4"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/star3"
-        android:layout_toRightOf="@+id/star3"
-        android:layout_toEndOf="@+id/star3" />
+        android:layout_alignTop="@+id/avgStar3"
+        android:layout_toRightOf="@+id/avgStar3"
+        android:layout_toEndOf="@+id/avgStar3" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/star5"
+        android:id="@+id/avgStar5"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/star4"
-        android:layout_toRightOf="@+id/star4"
-        android:layout_toEndOf="@+id/star4" />
+        android:layout_alignTop="@+id/avgStar4"
+        android:layout_toRightOf="@+id/avgStar4"
+        android:layout_toEndOf="@+id/avgStar4" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -69,9 +69,9 @@
         android:text="(# reviews)"
         android:id="@+id/reviewNum"
         android:textSize="10dp"
-        android:layout_alignBottom="@+id/star5"
-        android:layout_toRightOf="@+id/star5"
-        android:layout_toEndOf="@+id/star5"
+        android:layout_alignBottom="@+id/avgStar5"
+        android:layout_toRightOf="@+id/avgStar5"
+        android:layout_toEndOf="@+id/avgStar5"
         android:layout_marginLeft="31dp"
         android:layout_marginStart="31dp" />
 
@@ -94,13 +94,13 @@
         android:layout_height="30dp"
         android:text="Add to order"
         android:id="@+id/addButton"
+        android:background="#ffffbf00"
+        android:textColor="#ffffffff"
+        android:onClick="addToOrder"
         android:layout_below="@+id/disText"
         android:layout_alignLeft="@+id/disText"
         android:layout_alignStart="@+id/disText"
-        android:layout_marginTop="20dp"
-        android:background="#ffffbf00"
-        android:textColor="#ffffffff"
-        android:onClick="addToOrder" />
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -148,12 +148,11 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/comTitle"
         android:id="@+id/comTitle"
-        android:layout_marginTop="15dp"
-        android:layout_below="@+id/dishImg1"
-        android:layout_alignLeft="@+id/photoText"
-        android:layout_alignStart="@+id/photoText"
         android:textSize="15dp"
-        android:textColor="#FFAB08" />
+        android:textColor="#FFAB08"
+        android:layout_below="@+id/dishImg1"
+        android:layout_alignRight="@+id/photoText"
+        android:layout_alignEnd="@+id/photoText" />
 
     <ImageView
         android:layout_width="40dp"
@@ -168,7 +167,7 @@
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView12"
+        android:id="@+id/com1Star1"
         android:src="@drawable/star"
         android:layout_alignTop="@+id/userImg1"
         android:layout_toRightOf="@+id/userImg1"
@@ -178,38 +177,38 @@
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView13"
+        android:id="@+id/com1Star2"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView12"
-        android:layout_toRightOf="@+id/imageView12"
-        android:layout_toEndOf="@+id/imageView12" />
+        android:layout_alignTop="@+id/com1Star1"
+        android:layout_toRightOf="@+id/com1Star1"
+        android:layout_toEndOf="@+id/com1Star1" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView14"
+        android:id="@+id/com1Star3"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView13"
-        android:layout_toRightOf="@+id/imageView13"
-        android:layout_toEndOf="@+id/imageView13" />
+        android:layout_alignTop="@+id/com1Star2"
+        android:layout_toRightOf="@+id/com1Star2"
+        android:layout_toEndOf="@+id/com1Star2" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView15"
+        android:id="@+id/com1Star4"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView14"
-        android:layout_toRightOf="@+id/imageView14"
-        android:layout_toEndOf="@+id/imageView14" />
+        android:layout_alignTop="@+id/com1Star3"
+        android:layout_toRightOf="@+id/com1Star3"
+        android:layout_toEndOf="@+id/com1Star3" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView16"
+        android:id="@+id/com1Star5"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView15"
-        android:layout_toRightOf="@+id/imageView15"
-        android:layout_toEndOf="@+id/imageView15" />
+        android:layout_alignTop="@+id/com1Star4"
+        android:layout_toRightOf="@+id/com1Star4"
+        android:layout_toEndOf="@+id/com1Star4" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -217,9 +216,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Comment"
         android:id="@+id/dishComText1"
-        android:layout_below="@+id/imageView12"
-        android:layout_alignLeft="@+id/imageView12"
-        android:layout_alignStart="@+id/imageView12"
+        android:layout_below="@+id/com1Star1"
+        android:layout_alignLeft="@+id/com1Star1"
+        android:layout_alignStart="@+id/com1Star1"
         android:layout_marginTop="5dp"
         android:textSize="10dp" />
 
@@ -236,7 +235,7 @@
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView11"
+        android:id="@+id/com2Star1"
         android:src="@drawable/star"
         android:layout_alignTop="@+id/userImg2"
         android:layout_alignLeft="@+id/dishComText1"
@@ -245,29 +244,29 @@
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView17"
+        android:id="@+id/com2Star2"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView11"
-        android:layout_toRightOf="@+id/imageView11"
-        android:layout_toEndOf="@+id/imageView11" />
+        android:layout_alignTop="@+id/com2Star1"
+        android:layout_toRightOf="@+id/com2Star1"
+        android:layout_toEndOf="@+id/com2Star1" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView18"
+        android:id="@+id/com2Star3"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView17"
-        android:layout_toRightOf="@+id/imageView17"
-        android:layout_toEndOf="@+id/imageView17" />
+        android:layout_alignTop="@+id/com2Star2"
+        android:layout_toRightOf="@+id/com2Star2"
+        android:layout_toEndOf="@+id/com2Star2" />
 
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView19"
+        android:id="@+id/com2Star4"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView18"
-        android:layout_toRightOf="@+id/imageView18"
-        android:layout_toEndOf="@+id/imageView18" />
+        android:layout_alignTop="@+id/com2Star3"
+        android:layout_toRightOf="@+id/com2Star3"
+        android:layout_toEndOf="@+id/com2Star3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -275,9 +274,9 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Comment"
         android:id="@+id/dishComText2"
-        android:layout_below="@+id/imageView11"
-        android:layout_alignLeft="@+id/imageView11"
-        android:layout_alignStart="@+id/imageView11"
+        android:layout_below="@+id/com2Star1"
+        android:layout_alignLeft="@+id/com2Star1"
+        android:layout_alignStart="@+id/com2Star1"
         android:layout_marginTop="5dp"
         android:textSize="10dp" />
 
@@ -285,21 +284,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dishComInput"
-        android:width="160dp"
+        android:width="210dp"
         android:textSize="12dp"
-        android:layout_below="@+id/uploadImg"
-        android:layout_alignLeft="@+id/uploadImg"
-        android:layout_alignStart="@+id/uploadImg" />
+        android:layout_below="@+id/ratingBar"
+        android:layout_alignLeft="@+id/ratingBar"
+        android:layout_alignStart="@+id/ratingBar" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fbShareButton"
         android:src="@drawable/share"
-        android:layout_below="@+id/dishComInput"
-        android:layout_toRightOf="@+id/imageView16"
-        android:layout_toEndOf="@+id/imageView16"
-        android:onClick="sharePhotoToFacebook" />
+        android:onClick="sharePhotoToFacebook"
+        android:layout_alignBottom="@+id/dishComInput"
+        android:layout_toRightOf="@+id/submitDishCom"
+        android:layout_toEndOf="@+id/submitDishCom" />
 
     <Button
         android:layout_width="wrap_content"
@@ -308,11 +307,10 @@
         android:id="@+id/submitDishCom"
         android:background="#ffffbf00"
         android:textColor="#ffffffff"
-        android:layout_below="@+id/dishComInput"
-        android:layout_alignRight="@+id/imageView11"
-        android:layout_alignEnd="@+id/imageView11"
-        android:layout_marginTop="8dp"
-        android:onClick="submitReview" />
+        android:onClick="submitReview"
+        android:layout_below="@+id/ratingBar"
+        android:layout_toRightOf="@+id/dishComInput"
+        android:layout_toEndOf="@+id/dishComInput" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -324,8 +322,7 @@
         android:textColor="#FFAB08"
         android:layout_below="@+id/userImg2"
         android:layout_alignLeft="@+id/comTitle"
-        android:layout_alignStart="@+id/comTitle"
-        android:layout_marginTop="11dp" />
+        android:layout_alignStart="@+id/comTitle" />
 
     <ImageView
         android:layout_width="80dp"
@@ -351,10 +348,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ratingBar"
-        android:layout_alignBottom="@+id/dishComInput"
-        android:layout_toRightOf="@+id/dishComInput"
-        android:layout_toEndOf="@+id/dishComInput"
-        android:layout_gravity="right" />
+        android:layout_gravity="right"
+        android:layout_below="@+id/uploadImg"
+        android:layout_alignLeft="@+id/uploadImg"
+        android:layout_alignStart="@+id/uploadImg" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -370,11 +367,11 @@
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:id="@+id/imageView3"
+        android:id="@+id/com2Star5"
         android:src="@drawable/star"
-        android:layout_alignTop="@+id/imageView19"
-        android:layout_toRightOf="@+id/imageView19"
-        android:layout_toEndOf="@+id/imageView19" />
+        android:layout_alignTop="@+id/com2Star4"
+        android:layout_toRightOf="@+id/com2Star4"
+        android:layout_toEndOf="@+id/com2Star4" />
 
 
 </RelativeLayout>
